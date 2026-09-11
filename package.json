@@ -1,0 +1,18 @@
+{
+  "name": "drewane",
+  "version": "1.0.0",
+  "description": "DREWANE premium jewelry and fragrance e-commerce platform",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "dotenv": "^17.2.2",
+    "express": "^5.2.1"
+  }
+}

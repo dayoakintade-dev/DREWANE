@@ -1,0 +1,1672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Account — DREWANE</title>
+
+    <meta
+        name="description"
+        content="Manage your DREWANE account, orders, wishlist, details, and addresses."
+    >
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <style>
+        /* =========================
+           ACCOUNT PAGE
+        ========================== */
+
+        .account-intro {
+            padding: 28px var(--padding) 22px;
+        }
+
+        .account-intro-inner {
+            width: min(100%, var(--container));
+            margin: 0 auto;
+        }
+
+        .account-intro .eyebrow {
+            margin-bottom: 6px;
+        }
+
+        .account-intro h1 {
+            margin: 0 0 7px;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(34px, 4vw, 44px);
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .account-welcome {
+            max-width: 560px;
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.55;
+        }
+
+        .account-section {
+            padding: 0 var(--padding) 40px;
+        }
+
+        .account-layout {
+            width: min(100%, var(--container));
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 165px minmax(0, 1fr);
+            gap: 40px;
+            align-items: start;
+        }
+
+        .account-navigation {
+            position: sticky;
+            top: 95px;
+        }
+
+        .account-navigation nav {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0;
+        }
+
+        .account-nav-link {
+            padding: 5px 0;
+            border: 0;
+            background: transparent;
+            font: inherit;
+            font-size: 14px;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .account-nav-link.active {
+            font-weight: 600;
+        }
+
+        .account-content {
+            min-width: 0;
+        }
+
+        .account-panel {
+            display: none;
+        }
+
+        .account-panel.active {
+            display: block;
+        }
+
+        .account-panel-heading {
+            margin-bottom: 16px;
+        }
+
+        .account-panel-heading .eyebrow {
+            margin-bottom: 6px;
+        }
+
+        .account-panel-heading h2 {
+            margin: 0 0 6px;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(27px, 3vw, 36px);
+            font-weight: 400;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+        }
+
+        .account-panel-heading > p:last-child {
+            max-width: 600px;
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.55;
+        }
+
+        /* =========================
+           ACCOUNT DETAILS
+        ========================== */
+
+        .account-personal-card {
+            padding: 20px;
+            border: 1px solid rgba(13, 13, 11, 0.12);
+            margin-bottom: 12px;
+        }
+
+        .account-personal-heading {
+            margin-bottom: 16px;
+        }
+
+        .account-personal-heading .eyebrow {
+            margin-bottom: 5px;
+        }
+
+        .account-personal-heading h3 {
+            margin: 0;
+            font-family: "Playfair Display", serif;
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .account-personal-details {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .account-personal-detail {
+            min-width: 0;
+        }
+
+        .account-personal-detail span {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .account-personal-detail p {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.5;
+            overflow-wrap: anywhere;
+        }
+
+        .account-personal-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-top: 16px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(13, 13, 11, 0.1);
+        }
+
+        /* =========================
+           OVERVIEW
+        ========================== */
+
+        .account-overview-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .account-card {
+            min-width: 0;
+            padding: 18px;
+            border: 1px solid rgba(13, 13, 11, 0.12);
+        }
+
+        .account-orders-card {
+            grid-column: 1 / -1;
+        }
+
+        .account-details-card {
+            padding: 22px;
+            border: 1px solid rgba(247, 242, 234, 0.18);
+            background: rgba(247, 242, 234, 0.035);
+        }
+
+        .account-details-card .account-card-heading {
+            margin-bottom: 18px;
+        }
+
+        .account-details-card .account-card-heading > div {
+            width: 100%;
+        }
+
+        .account-details-card .account-card-heading .eyebrow {
+            margin-bottom: 7px;
+        }
+
+        .account-details-card h3 {
+            margin: 0;
+            font-family: "Playfair Display", serif;
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .account-details-card .account-details-preview {
+            padding-top: 16px;
+            border-top: 1px solid rgba(247, 242, 234, 0.12);
+        }
+
+        .account-details-card .account-details-preview p {
+            margin: 0 0 8px;
+            font-size: 14px;
+            line-height: 1.55;
+        }
+
+        .account-details-card .account-details-preview p:last-child {
+            margin-bottom: 0;
+        }
+
+        .account-card-heading {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 12px;
+        }
+
+        .account-card-heading .eyebrow {
+            margin-bottom: 5px;
+        }
+
+        .account-card h3 {
+            margin: 0;
+            font-family: "Playfair Display", serif;
+            font-size: 22px;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .text-button {
+            flex: 0 0 auto;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            color: #FFFFFF;
+            font: inherit;
+            font-size: 12px;
+            cursor: pointer;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        .account-empty-small {
+            padding: 2px 0;
+        }
+
+        .account-empty-small p {
+            margin: 0 0 7px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .account-details-preview p {
+            margin: 0 0 6px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .account-details-preview p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* =========================
+           EMPTY STATES
+        ========================== */
+
+        .account-empty-state {
+            padding: 28px 18px;
+            border: 1px solid rgba(13, 13, 11, 0.12);
+            text-align: center;
+        }
+
+        .account-empty-state .eyebrow {
+            margin-bottom: 6px;
+        }
+
+        .account-empty-state h3 {
+            margin: 0 0 7px;
+            font-family: "Playfair Display", serif;
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .account-empty-state p {
+            max-width: 470px;
+            margin: 0 auto 15px;
+            font-size: 14px;
+            line-height: 1.55;
+        }
+
+        /* =========================
+           DETAILS FORM
+        ========================== */
+
+        .account-form {
+            max-width: 680px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 13px;
+            margin-bottom: 16px;
+        }
+
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-field label {
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        .account-form .form-field input {
+            width: 100%;
+            min-height: 44px;
+            padding: 10px 12px;
+            border: 1px solid rgba(13, 13, 11, 0.22);
+            background: rgba(13, 13, 11, 0.02);
+            color: #FFFFFF;
+            font: inherit;
+            font-size: 14px;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        .account-form .form-field input:focus {
+            border-color: rgba(13, 13, 11, 0.55);
+            background: rgba(13, 13, 11, 0.04);
+        }
+
+        /* =========================
+           ACCOUNT AUTH FORM
+        ========================== */
+
+        .account-auth {
+            padding: 28px var(--padding) 40px;
+        }
+
+        .account-auth-inner {
+            width: min(100%, 600px);
+            margin: 0 auto;
+            padding: 26px;
+            border: 1px solid rgba(247, 242, 234, 0.18);
+        }
+
+        .account-auth-inner .eyebrow {
+            margin-bottom: 6px;
+        }
+
+        .account-auth h1 {
+            margin: 0 0 7px;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(32px, 4vw, 42px);
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .account-auth-inner > p {
+            margin: 0 0 18px;
+            font-size: 14px;
+            line-height: 1.55;
+        }
+
+        .account-auth .form-field input {
+            border-color: rgba(247, 242, 234, 0.3);
+            background: rgba(247, 242, 234, 0.04);
+            color: #FFFFFF;
+        }
+
+        .account-auth .form-field input:focus {
+            border-color: rgba(247, 242, 234, 0.7);
+        }
+
+        .account-login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+
+        .account-create {
+            margin-top: 16px !important;
+        }
+
+        .account-create a {
+            text-underline-offset: 4px;
+        }
+
+        /* =========================
+           ADDRESSES
+        ========================== */
+
+        .account-addresses {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        .address-card {
+            padding: 18px;
+            border: 1px solid rgba(13, 13, 11, 0.12);
+        }
+
+        .address-card-heading {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 14px;
+        }
+
+        .address-card-heading .eyebrow {
+            margin-bottom: 5px;
+        }
+
+        .address-card h3 {
+            margin: 0;
+            font-family: "Playfair Display", serif;
+            font-size: 22px;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .address-content p {
+            margin: 0 0 7px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .account-signout {
+            margin-top: 0;
+        }
+
+        /* =========================
+           TABLET
+        ========================== */
+
+        @media (max-width: 1000px) {
+
+            .account-layout {
+                grid-template-columns: 150px minmax(0, 1fr);
+                gap: 30px;
+            }
+
+            .account-personal-details {
+                gap: 16px;
+            }
+
+            .account-card,
+            .account-personal-card {
+                padding: 18px;
+            }
+
+            .account-details-card {
+                padding: 20px;
+            }
+
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 768px) {
+
+            .account-intro {
+                padding: 24px 20px 18px;
+            }
+
+            .account-intro h1 {
+                font-size: 30px;
+            }
+
+            .account-welcome {
+                font-size: 14px;
+            }
+
+            .account-section {
+                padding: 0 20px 32px;
+            }
+
+            .account-layout {
+                width: 100%;
+                display: block;
+            }
+
+            .account-navigation {
+                position: static;
+                margin-bottom: 18px;
+                padding-bottom: 12px;
+                border-bottom: 1px solid rgba(13, 13, 11, 0.12);
+            }
+
+            .account-navigation nav {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 0;
+            }
+
+            .account-nav-link {
+                padding: 6px 0;
+                font-size: 13px;
+            }
+
+            .account-panel-heading {
+                margin-bottom: 15px;
+            }
+
+            .account-panel-heading h2 {
+                font-size: 27px;
+            }
+
+            .account-personal-card {
+                padding: 17px;
+                margin-bottom: 11px;
+            }
+
+            .account-personal-heading {
+                margin-bottom: 15px;
+            }
+
+            .account-personal-heading h3 {
+                font-size: 22px;
+            }
+
+            .account-personal-details {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .account-personal-actions {
+                margin-top: 15px;
+                padding-top: 11px;
+            }
+
+            .account-overview-grid {
+                grid-template-columns: 1fr;
+                gap: 11px;
+            }
+
+            .account-orders-card {
+                grid-column: auto;
+            }
+
+            .account-card {
+                padding: 17px;
+            }
+
+            .account-details-card {
+                padding: 18px;
+            }
+
+            .account-details-card h3 {
+                font-size: 21px;
+            }
+
+            .account-card h3,
+            .address-card h3 {
+                font-size: 21px;
+            }
+
+            .form-grid {
+                gap: 12px;
+                margin-bottom: 16px;
+            }
+
+            .account-empty-state {
+                padding: 27px 17px;
+            }
+
+            .account-empty-state h3 {
+                font-size: 23px;
+            }
+
+            .address-card {
+                padding: 17px;
+            }
+
+            .account-auth {
+                padding: 24px 20px 32px;
+            }
+
+            .account-auth-inner {
+                padding: 21px;
+            }
+
+            .account-auth h1 {
+                font-size: 30px;
+            }
+
+        }
+
+        /* =========================
+           SMALL MOBILE
+        ========================== */
+
+        @media (max-width: 480px) {
+
+            .account-intro {
+                padding-top: 22px;
+                padding-bottom: 17px;
+            }
+
+            .account-intro h1 {
+                font-size: 28px;
+            }
+
+            .account-navigation nav {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .account-panel-heading h2 {
+                font-size: 25px;
+            }
+
+            .account-personal-card {
+                padding: 15px;
+            }
+
+            .account-card {
+                padding: 15px;
+            }
+
+            .account-details-card {
+                padding: 16px;
+            }
+
+            .account-card-heading,
+            .address-card-heading {
+                gap: 10px;
+            }
+
+            .account-card h3,
+            .address-card h3 {
+                font-size: 20px;
+            }
+
+            .account-details-card h3 {
+                font-size: 20px;
+            }
+
+            .account-empty-state {
+                padding: 25px 14px;
+            }
+
+            .account-empty-state h3 {
+                font-size: 21px;
+            }
+
+            .account-auth {
+                padding: 22px 20px 30px;
+            }
+
+            .account-auth-inner {
+                padding: 18px;
+            }
+
+            .account-auth h1 {
+                font-size: 28px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         SITE HEADER
+    ========================== -->
+    <header class="site-header">
+
+        <div class="header-inner">
+
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Open menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+            </button>
+
+            <a href="../index.html" class="site-logo">
+                DREWANE
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav" aria-label="Main navigation">
+
+                <a href="shop.html">
+                    Shop
+                </a>
+
+                <a href="collection.html">
+                    Collections
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="journal.html">
+                    Journal
+                </a>
+
+            </nav>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+
+                <a href="account.html">
+                    Account
+                </a>
+
+                <a href="wishlist.html">
+                    Wishlist
+                </a>
+
+                <a href="cart.html">
+                    Bag <span class="cart-count">(0)</span>
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- =========================
+             MOBILE MENU
+        ========================== -->
+        <div class="mobile-menu" aria-hidden="true">
+
+            <nav class="mobile-nav" aria-label="Mobile navigation">
+
+                <a href="shop.html">
+                    Shop
+                </a>
+
+                <a href="collection.html">
+                    Collections
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="journal.html">
+                    Journal
+                </a>
+
+                <div class="mobile-nav-divider"></div>
+
+                <a href="account.html">
+                    Account
+                </a>
+
+                <a href="wishlist.html">
+                    Wishlist
+                </a>
+
+                <a href="cart.html">
+                    Shopping Bag
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+    <main class="customer-page">
+
+        <!-- =========================
+             ACCOUNT INTRO
+        ========================== -->
+        <section class="account-intro">
+
+            <div class="account-intro-inner">
+
+                <p class="eyebrow">
+                    MY ACCOUNT
+                </p>
+
+                <p
+                    id="account-welcome"
+                    class="account-welcome"
+                >
+                    Manage your personal details, orders, saved pieces, and account.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             ACCOUNT DASHBOARD
+        ========================== -->
+        <section class="account-section">
+
+            <div class="account-layout">
+
+                <!-- =========================
+                     ACCOUNT NAVIGATION
+                ========================== -->
+                <aside class="account-navigation">
+
+                    <nav aria-label="Account navigation">
+
+                        <button
+                            type="button"
+                            class="account-nav-link active"
+                            data-account-tab="overview"
+                        >
+                            Overview
+                        </button>
+
+                        <button
+                            type="button"
+                            class="account-nav-link"
+                            data-account-tab="orders"
+                        >
+                            Orders
+                        </button>
+
+                        <button
+                            type="button"
+                            class="account-nav-link"
+                            data-account-tab="wishlist"
+                        >
+                            Wishlist
+                        </button>
+
+                        <button
+                            type="button"
+                            class="account-nav-link"
+                            data-account-tab="details"
+                        >
+                            Details
+                        </button>
+
+                        <button
+                            type="button"
+                            class="account-nav-link"
+                            data-account-tab="addresses"
+                        >
+                            Addresses
+                        </button>
+
+                    </nav>
+
+                </aside>
+
+                <!-- =========================
+                     ACCOUNT CONTENT
+                ========================== -->
+                <div class="account-content">
+
+                    <!-- =========================
+                         OVERVIEW
+                    ========================== -->
+                    <section
+                        class="account-panel active"
+                        data-account-panel="overview"
+                    >
+
+                        <div class="account-panel-heading">
+
+                            <h2>
+                                Your account details
+                            </h2>
+
+                            <p>
+                                Your personal information and DREWANE account activity.
+                            </p>
+
+                        </div>
+
+                        <!-- Personal Details -->
+                        <article class="account-personal-card">
+
+                            <div class="account-personal-heading">
+
+                                <p class="eyebrow">
+                                    PERSONAL DETAILS
+                                </p>
+
+                                <h3>
+                                    Your information
+                                </h3>
+
+                            </div>
+
+                            <div class="account-personal-details">
+
+                                <div class="account-personal-detail">
+
+                                    <span>
+                                        Name
+                                    </span>
+
+                                    <p id="account-name">
+                                        Your Name
+                                    </p>
+
+                                </div>
+
+                                <div class="account-personal-detail">
+
+                                    <span>
+                                        Email
+                                    </span>
+
+                                    <p id="account-email">
+                                        email@example.com
+                                    </p>
+
+                                </div>
+
+                                <div class="account-personal-detail">
+
+                                    <span>
+                                        Phone
+                                    </span>
+
+                                    <p id="account-phone">
+                                        Phone number
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="account-personal-actions">
+
+                                <button
+                                    type="button"
+                                    class="text-button"
+                                    data-account-tab-link="details"
+                                >
+                                    Edit Details
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="text-button"
+                                    data-account-signout-action
+                                >
+                                    Sign Out
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <div class="account-overview-grid">
+
+                            <!-- Recent Orders -->
+                            <article class="account-card account-orders-card">
+
+                                <div class="account-card-heading">
+
+                                    <div>
+
+                                        <p class="eyebrow">
+                                            RECENT ORDERS
+                                        </p>
+
+                                        <h3>
+                                            Your orders
+                                        </h3>
+
+                                    </div>
+
+                                    <button
+                                        type="button"
+                                        class="text-button"
+                                        data-account-tab-link="orders"
+                                    >
+                                        View All
+                                    </button>
+
+                                </div>
+
+                                <div
+                                    class="recent-orders"
+                                    id="recent-orders"
+                                >
+
+                                    <div class="account-empty-small">
+
+                                        <p>
+                                            No orders yet.
+                                        </p>
+
+                                        <a
+                                            href="shop.html"
+                                            class="text-link"
+                                        >
+                                            Start Shopping
+                                        </a>
+
+                                    </div>
+
+                                </div>
+
+                            </article>
+
+                            <!-- Saved Pieces -->
+                            <article class="account-card">
+
+                                <div class="account-card-heading">
+
+                                    <div>
+
+                                        <p class="eyebrow">
+                                            SAVED PIECES
+                                        </p>
+
+                                        <h3>
+                                            Your wishlist
+                                        </h3>
+
+                                    </div>
+
+                                    <button
+                                        type="button"
+                                        class="text-button"
+                                        data-account-tab-link="wishlist"
+                                    >
+                                        View All
+                                    </button>
+
+                                </div>
+
+                                <div
+                                    class="account-wishlist-preview"
+                                    id="account-wishlist-preview"
+                                >
+
+                                    <div class="account-empty-small">
+
+                                        <p>
+                                            Your wishlist is empty.
+                                        </p>
+
+                                        <a
+                                            href="shop.html"
+                                            class="text-link"
+                                        >
+                                            Explore Pieces
+                                        </a>
+
+                                    </div>
+
+                                </div>
+
+                            </article>
+
+                            <!-- Account Details -->
+                            <article class="account-card account-details-card">
+
+                                <div class="account-card-heading">
+
+                                    <div>
+
+                                        <p class="eyebrow">
+                                            ACCOUNT DETAILS
+                                        </p>
+
+                                        <h3>
+                                            Your details
+                                        </h3>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="account-details-preview">
+
+                                    <p>
+                                        <strong>
+                                            Personal information
+                                        </strong>
+                                    </p>
+
+                                    <p>
+                                        Manage your name, email, and phone number.
+                                    </p>
+
+                                </div>
+
+                            </article>
+
+                        </div>
+
+                    </section>
+
+                    <!-- =========================
+                         ORDERS
+                    ========================== -->
+                    <section
+                        class="account-panel"
+                        data-account-panel="orders"
+                    >
+
+                        <div class="account-panel-heading">
+
+                            <p class="eyebrow">
+                                ORDERS
+                            </p>
+
+                            <h2>
+                                Order history
+                            </h2>
+
+                            <p>
+                                View your previous DREWANE purchases and
+                                order details.
+                            </p>
+
+                        </div>
+
+                        <div
+                            class="account-orders"
+                            id="account-orders"
+                        >
+
+                            <div class="account-empty-state">
+
+                                <p class="eyebrow">
+                                    NO ORDERS
+                                </p>
+
+                                <h3>
+                                    Your order history is empty.
+                                </h3>
+
+                                <p>
+                                    Once you place an order, it will
+                                    appear here.
+                                </p>
+
+                                <a
+                                    href="shop.html"
+                                    class="button"
+                                >
+                                    Explore The Shop
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                    <!-- =========================
+                         WISHLIST
+                    ========================== -->
+                    <section
+                        class="account-panel"
+                        data-account-panel="wishlist"
+                    >
+
+                        <div class="account-panel-heading">
+
+                            <p class="eyebrow">
+                                SAVED PIECES
+                            </p>
+
+                            <h2>
+                                Your wishlist
+                            </h2>
+
+                            <p>
+                                Pieces you've chosen to keep close.
+                            </p>
+
+                        </div>
+
+                        <div
+                            class="account-wishlist"
+                            id="account-wishlist"
+                        >
+
+                            <div class="account-empty-state">
+
+                                <p class="eyebrow">
+                                    YOUR WISHLIST
+                                </p>
+
+                                <h3>
+                                    Your wishlist is waiting.
+                                </h3>
+
+                                <p>
+                                    Save pieces you love and they'll
+                                    appear here.
+                                </p>
+
+                                <a
+                                    href="shop.html"
+                                    class="button"
+                                >
+                                    Continue Shopping
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                    <!-- =========================
+                         DETAILS
+                    ========================== -->
+                    <section
+                        class="account-panel"
+                        data-account-panel="details"
+                    >
+
+                        <div class="account-panel-heading">
+
+                            <p class="eyebrow">
+                                PERSONAL DETAILS
+                            </p>
+
+                            <h2>
+                                Your details
+                            </h2>
+
+                            <p>
+                                Keep your account information up to date.
+                            </p>
+
+                        </div>
+
+                        <form
+                            class="account-form"
+                            id="account-details-form"
+                        >
+
+                            <div class="form-grid">
+
+                                <div class="form-field">
+
+                                    <label for="account-name-input">
+                                        Name
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="account-name-input"
+                                        name="name"
+                                        autocomplete="name"
+                                    >
+
+                                </div>
+
+                                <div class="form-field">
+
+                                    <label for="account-email-input">
+                                        Email address
+                                    </label>
+
+                                    <input
+                                        type="email"
+                                        id="account-email-input"
+                                        name="email"
+                                        autocomplete="email"
+                                    >
+
+                                </div>
+
+                                <div class="form-field">
+
+                                    <label for="account-phone-input">
+                                        Phone number
+                                    </label>
+
+                                    <input
+                                        type="tel"
+                                        id="account-phone-input"
+                                        name="phone"
+                                        autocomplete="tel"
+                                    >
+
+                                </div>
+
+                            </div>
+
+                            <button
+                                type="submit"
+                                class="button"
+                            >
+                                Save Changes
+                            </button>
+
+                        </form>
+
+                    </section>
+
+                    <!-- =========================
+                         ADDRESSES
+                    ========================== -->
+                    <section
+                        class="account-panel"
+                        data-account-panel="addresses"
+                    >
+
+                        <div class="account-panel-heading">
+
+                            <p class="eyebrow">
+                                ADDRESSES
+                            </p>
+
+                            <h2>
+                                Saved addresses
+                            </h2>
+
+                            <p>
+                                Manage your saved shipping addresses.
+                            </p>
+
+                        </div>
+
+                        <div
+                            class="account-addresses"
+                            id="account-addresses"
+                        >
+
+                            <article class="address-card">
+
+                                <div class="address-card-heading">
+
+                                    <div>
+
+                                        <p class="eyebrow">
+                                            DEFAULT ADDRESS
+                                        </p>
+
+                                        <h3>
+                                            Shipping Address
+                                        </h3>
+
+                                    </div>
+
+                                    <button
+                                        type="button"
+                                        class="text-button"
+                                    >
+                                        Edit
+                                    </button>
+
+                                </div>
+
+                                <div class="address-content">
+
+                                    <p>
+                                        No saved address yet.
+                                    </p>
+
+                                    <button
+                                        type="button"
+                                        class="text-link"
+                                        data-add-address
+                                    >
+                                        + Add Address
+                                    </button>
+
+                                </div>
+
+                            </article>
+
+                        </div>
+
+                    </section>
+
+                    <!-- =========================
+                         SIGN OUT
+                    ========================== -->
+                    <section
+                        class="account-panel"
+                        data-account-panel="signout"
+                    >
+
+                        <div class="account-panel-heading">
+
+                            <p class="eyebrow">
+                                SIGN OUT
+                            </p>
+
+                            <h2>
+                                Leaving already?
+                            </h2>
+
+                            <p>
+                                Sign out of your DREWANE account on this device.
+                            </p>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="button account-signout"
+                            id="account-signout"
+                        >
+                            Sign Out
+                        </button>
+
+                    </section>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             LOGGED OUT STATE
+        ========================== -->
+        <section
+            class="account-auth"
+            id="account-auth"
+            hidden
+        >
+
+            <div class="account-auth-inner">
+
+                <p class="eyebrow">
+                    MY ACCOUNT
+                </p>
+
+                <h1>
+                    Welcome to DREWANE.
+                </h1>
+
+                <p>
+                    Sign in to view your orders, saved pieces,
+                    and account details.
+                </p>
+
+                <form
+                    class="account-login-form"
+                    id="account-login-form"
+                >
+
+                    <div class="form-field">
+
+                        <label for="login-email">
+                            Email address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="login-email"
+                            name="email"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="form-field">
+
+                        <label for="login-password">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="login-password"
+                            name="password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="button"
+                    >
+                        Sign In
+                    </button>
+
+                </form>
+
+                <a
+                    href="#"
+                    class="text-link"
+                >
+                    Forgot Password?
+                </a>
+
+                <p class="account-create">
+
+                    Don't have an account?
+
+                    <a href="#">
+                        Create Account
+                    </a>
+
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- =========================
+         SITE FOOTER
+    ========================== -->
+    <footer class="site-footer">
+
+        <div class="footer-main">
+
+            <div class="footer-column">
+
+                <h3>
+                    Client Services
+                </h3>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a href="shipping.html">
+                    Shipping
+                </a>
+
+                <a href="returns.html">
+                    Returns
+                </a>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h3>
+                    About
+                </h3>
+
+                <a href="about.html">
+                    Our Story
+                </a>
+
+                <a href="journal.html">
+                    Journal
+                </a>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h3>
+                    Legal
+                </h3>
+
+                <a href="privacy.html">
+                    Privacy
+                </a>
+
+                <a href="terms.html">
+                    Terms
+                </a>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h3>
+                    Social
+                </h3>
+
+                <a
+                    href="#"
+                    aria-label="Instagram"
+                >
+                    Instagram
+                </a>
+
+                <a
+                    href="#"
+                    aria-label="TikTok"
+                >
+                    TikTok
+                </a>
+
+                <a
+                    href="#"
+                    aria-label="Pinterest"
+                >
+                    Pinterest
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                ©️ 2026 DREWANE
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/script.js"></script>
+
+</body>
+</html>

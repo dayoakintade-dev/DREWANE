@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Terms &amp; Conditions — DREWANE</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+
+  <style>
+    /* =========================
+       TERMS PAGE STYLING
+    ========================== */
+
+    .site-header .header-inner {
+      min-height: 60px;
+    }
+
+    .mobile-menu {
+      top: 60px;
+    }
+
+    .policy-page {
+      width: 100%;
+    }
+
+    .policy-hero {
+      width: min(100%, var(--container));
+      margin: 0 auto;
+      padding: 50px var(--padding) 32px;
+    }
+
+    .policy-hero .eyebrow {
+      margin-bottom: 10px;
+    }
+
+    .policy-hero h1 {
+      margin: 0 0 13px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(40px, 5vw, 60px);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+    }
+
+    .policy-intro {
+      max-width: 600px;
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .policy-nav {
+      width: min(100%, var(--container));
+      margin: 0 auto;
+      padding: 0 var(--padding) 16px;
+      display: flex;
+      gap: 24px;
+      border-bottom: 1px solid rgba(13, 13, 11, 0.12);
+    }
+
+    .policy-nav a {
+      font-size: 12px;
+      line-height: 1.4;
+      text-decoration: none;
+    }
+
+    .policy-section {
+      width: min(100%, var(--container));
+      margin: 0 auto;
+      padding: 32px var(--padding);
+      display: grid;
+      grid-template-columns: 45px minmax(0, 720px);
+      column-gap: 22px;
+      border-bottom: 1px solid rgba(13, 13, 11, 0.1);
+    }
+
+    .policy-section-number {
+      padding-top: 3px;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+    }
+
+    .policy-section-content h2 {
+      margin: 0 0 10px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(26px, 2.8vw, 36px);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+    }
+
+    .policy-section-content p {
+      max-width: 700px;
+      margin: 0 0 10px;
+      font-size: 14px;
+      line-height: 1.68;
+    }
+
+    .policy-section-content p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .policy-list {
+      margin: 13px 0 0;
+      padding-left: 19px;
+    }
+
+    .policy-list li {
+      margin-bottom: 6px;
+      padding-left: 4px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .policy-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .text-link {
+      display: inline-block;
+      margin-top: 2px;
+      font-size: 12px;
+      text-underline-offset: 4px;
+    }
+
+    .policy-cta {
+      width: min(100%, var(--container));
+      margin: 0 auto;
+      padding: 40px var(--padding) 48px;
+    }
+
+    .policy-cta .eyebrow {
+      margin-bottom: 8px;
+    }
+
+    .policy-cta h2 {
+      margin: 0 0 9px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(30px, 3.5vw, 42px);
+      font-weight: 400;
+      line-height: 1.15;
+    }
+
+    .policy-cta p {
+      max-width: 520px;
+      margin: 0 0 18px;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+
+    /* =========================
+       TABLET
+    ========================== */
+
+    @media (max-width: 1000px) {
+
+      .policy-hero {
+        padding-top: 42px;
+        padding-bottom: 28px;
+      }
+
+      .policy-section {
+        grid-template-columns: 40px minmax(0, 1fr);
+        column-gap: 20px;
+        padding-top: 29px;
+        padding-bottom: 29px;
+      }
+
+      .policy-cta {
+        padding-top: 36px;
+        padding-bottom: 44px;
+      }
+
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 768px) {
+
+      .site-header .header-inner {
+        min-height: 60px;
+      }
+
+      .mobile-menu {
+        top: 60px;
+      }
+
+      .policy-hero {
+        padding: 38px 20px 25px;
+      }
+
+      .policy-hero .eyebrow {
+        margin-bottom: 8px;
+      }
+
+      .policy-hero h1 {
+        margin-bottom: 11px;
+        font-size: 34px;
+        line-height: 1.06;
+      }
+
+      .policy-intro {
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .policy-nav {
+        padding: 0 20px 15px;
+        gap: 18px;
+        overflow-x: auto;
+      }
+
+      .policy-nav a {
+        flex: 0 0 auto;
+        font-size: 11px;
+      }
+
+      .policy-section {
+        width: 100%;
+        padding: 27px 20px 28px;
+        grid-template-columns: 30px minmax(0, 1fr);
+        column-gap: 11px;
+      }
+
+      .policy-section-number {
+        padding-top: 2px;
+        font-size: 10px;
+      }
+
+      .policy-section-content h2 {
+        margin-bottom: 9px;
+        font-size: 25px;
+      }
+
+      .policy-section-content p {
+        margin-bottom: 9px;
+        font-size: 14px;
+        line-height: 1.65;
+      }
+
+      .policy-list {
+        margin-top: 11px;
+        padding-left: 17px;
+      }
+
+      .policy-list li {
+        margin-bottom: 5px;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .policy-cta {
+        width: 100%;
+        padding: 34px 20px 40px;
+      }
+
+      .policy-cta h2 {
+        margin-bottom: 8px;
+        font-size: 30px;
+      }
+
+      .policy-cta p {
+        margin-bottom: 17px;
+        font-size: 14px;
+        line-height: 1.65;
+      }
+
+    }
+
+
+    /* =========================
+       SMALL MOBILE
+    ========================== */
+
+    @media (max-width: 480px) {
+
+      .policy-hero {
+        padding-top: 34px;
+        padding-bottom: 23px;
+      }
+
+      .policy-hero h1 {
+        font-size: 32px;
+      }
+
+      .policy-section {
+        padding-top: 25px;
+        padding-bottom: 26px;
+        grid-template-columns: 28px minmax(0, 1fr);
+        column-gap: 10px;
+      }
+
+      .policy-section-content h2 {
+        font-size: 24px;
+      }
+
+      .policy-cta {
+        padding-top: 32px;
+        padding-bottom: 38px;
+      }
+
+      .policy-cta h2 {
+        font-size: 28px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+  <header class="site-header">
+
+    <div class="header-inner">
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+      </button>
+
+      <a href="../index.html" class="site-logo">
+        DREWANE
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="shop.html">Shop</a>
+        <a href="collection.html">Collections</a>
+        <a href="about.html">About</a>
+        <a href="journal.html">Journal</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+
+        <a href="account.html" class="header-action">Account</a>
+        <a href="wishlist.html" class="header-action">Wishlist</a>
+        <a href="cart.html" class="header-action">Bag</a>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         MOBILE MENU
+    ========================== -->
+    <div class="mobile-menu" aria-hidden="true">
+
+      <nav class="mobile-nav" aria-label="Mobile navigation">
+
+        <a href="shop.html">Shop</a>
+        <a href="collection.html">Collections</a>
+        <a href="about.html">About</a>
+        <a href="journal.html">Journal</a>
+
+        <div class="mobile-nav-divider"></div>
+
+        <a href="contact.html">Contact</a>
+        <a href="account.html">Account</a>
+        <a href="wishlist.html">Wishlist</a>
+        <a href="cart.html">Shopping Bag</a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       MAIN CONTENT
+  ========================== -->
+  <main class="policy-page">
+
+    <!-- Intro -->
+    <section class="policy-hero">
+
+      <p class="eyebrow">Legal</p>
+
+      <h1>Terms &amp;<br>Conditions</h1>
+
+      <p class="policy-intro">
+        These terms apply when you browse, shop, or use
+        the DREWANE website and services.
+      </p>
+
+    </section>
+
+
+    <!-- Policy Navigation -->
+    <nav class="policy-nav" aria-label="Policy navigation">
+
+      <a href="shipping.html">Shipping</a>
+
+      <a href="returns.html">Returns</a>
+
+      <a href="privacy.html">Privacy</a>
+
+    </nav>
+
+
+    <!-- General Terms -->
+    <section class="policy-section">
+
+      <div class="policy-section-number">
+        01
+      </div>
+
+      <div class="policy-section-content">
+
+        <h2>General Terms</h2>
+
+        <p>
+          By using the DREWANE website, you agree to these
+          Terms &amp; Conditions and related policies.
+        </p>
+
+        <p>
+          If you do not agree, please do not use the website
+          or place an order.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- Products & Pricing -->
+    <section class="policy-section">
+
+      <div class="policy-section-number">
+        02
+      </div>
+
+      <div class="policy-section-content">
+
+        <h2>Products &amp; Pricing</h2>
+
+        <p>
+          We make reasonable efforts to keep product
+          descriptions, availability, images, and prices
+          accurate.
+        </p>
+
+        <p>
+          Details, availability, and prices may change
+          without prior notice.
+        </p>
+
+        <p>
+          Prices are shown in United States dollars (USD)
+          unless otherwise stated.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- Orders & Payment -->
+    <section class="policy-section">
+
+      <div class="policy-section-number">
+        03
+      </div>
+
+      <div class="policy-section-content">
+
+        <h2>Orders &amp; Payment</h2>
+
+        <p>
+          Placing an order is an offer to purchase. An order
+          is accepted when we confirm that it has been
+          successfully processed.
+        </p>
+
+        <p>
+          We may refuse or cancel orders because of fraud,
+          pricing errors, availability issues, or other
+          circumstances affecting fulfillment.
+        </p>
+
+        <p>
+          Payment must be authorized before an order is
+          processed.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- Shipping -->
+    <section class="policy-section">
+
+      <div class="policy-section-number">
+        04
+      </div>
+
+      <div class="policy-section-content">
+
+        <h2>Shipping &amp; Delivery</h2>
+
+        <p>
+          Delivery estimates may vary depending on
+          destination, carrier conditions, customs, and
+          other circumstances.
+        </p>
+
+        <p>
+          See our Shipping &amp; Delivery policy for more
+          information.
+        </p>
+
+        <a href="shipping.html" class="text-link">
+          View Shipping &amp; Delivery
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- Returns -->
+    <section class="policy-section">
+
+      <div class="policy-section-number">
+        05
+      </div>
+
+      <div class="policy-section-content">
+
+        <h2>Returns &amp; Exchanges</h2>
+
+        <p>
+          Returns and exchanges are subject to the conditions
+          in our Returns &amp; Exchanges policy.
+        </p>
+
+        <p>
+          Please review the policy before returning an item.
+        </p>
+
+        <a href="returns.html" class="text-link">
+          View Returns &amp; Exchanges
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- Accounts -->
+    <section class="policy-section">
+
+      <div class="policy-section-number">
+        06
+      </div>
+
+      <div class="policy-section-content">
+
+        <h2>Accounts</h2>
+
+        <p>
+          If you create an account, you are responsible for
+          keeping your information accurate and your login
+          details secure.
+        </p>
+
+        <p>
+          Contact us if you believe your account has been
+          accessed without authorization.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- Website Use -->
+    <section class="policy-section">
+
+      <div class="policy-section-number">
+        07
+      </div>
+
+      <div class="policy-section-content">
+
+        <h2>Website Use</h2>
+
+        <p>
+          Use the DREWANE website only for lawful purposes
+          and do not interfere with its operation or security.
+        </p>
+
+        <ul class="policy-list">
+
+          <li>
+            Do not attempt unauthorized access.
+          </li>
+
+          <li>
+            Do not use the website for unlawful activity.
+          </li>
+
+          <li>
+            Do not reproduce or misuse website content
+            without permission.
+          </li>
+
+        </ul>
+
+      </div>
+
+    </section>
+
+
+    <!-- Intellectual Property -->
+    <section class="policy-section">
+
+      <div class="policy-section-number">
+        08
+      </div>
+
+      <div class="policy-section-content">
+
+        <h2>Intellectual Property</h2>
+
+        <p>
+          The DREWANE name, logo, visual identity, imagery,
+          written content, designs, and other website
+          materials belong to or are licensed to DREWANE.
+        </p>
+
+        <p>
+          These materials may not be copied, reproduced,
+          distributed, or commercially used without
+          authorization.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- Changes -->
+    <section class="policy-section">
+
+      <div class="policy-section-number">
+        09
+      </div>
+
+      <div class="policy-section-content">
+
+        <h2>Changes to These Terms</h2>
+
+        <p>
+          We may update these terms when our services,
+          website, or legal requirements change.
+        </p>
+
+        <p>
+          Updated terms will be posted on this page.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- Contact CTA -->
+    <section class="policy-cta">
+
+      <p class="eyebrow">Questions?</p>
+
+      <h2>
+        We're here to help.
+      </h2>
+
+      <p>
+        Questions about these Terms &amp; Conditions?
+        Contact our client service team.
+      </p>
+
+      <a href="contact.html" class="button">
+        Contact Us
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+  <footer class="site-footer">
+
+    <div class="footer-main">
+
+      <div class="footer-column">
+
+        <h3>Client Services</h3>
+
+        <a href="contact.html">Contact</a>
+        <a href="shipping.html">Shipping</a>
+        <a href="returns.html">Returns</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>About</h3>
+
+        <a href="about.html">Our Story</a>
+        <a href="journal.html">Journal</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Legal</h3>
+
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Social</h3>
+
+        <a href="#" aria-label="Instagram">
+          Instagram
+        </a>
+
+        <a href="#" aria-label="TikTok">
+          TikTok
+        </a>
+
+        <a href="#" aria-label="Pinterest">
+          Pinterest
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <p>
+        ©️ 2026 DREWANE
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script src="../js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Form Collection — DREWANE</title>
+    <meta
+        name="description"
+        content="Explore The Form Collection by DREWANE — sculptural jewelry designed with quiet distinction."
+    >
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <style>
+        /* =========================
+           COLLECTION PAGE
+        ========================== */
+
+        .collection-intro {
+            padding: 32px var(--padding) 22px;
+        }
+
+        .collection-intro-content {
+            width: min(100%, var(--container));
+            margin-inline: auto;
+        }
+
+        .collection-intro .eyebrow {
+            margin-bottom: 7px;
+        }
+
+        .collection-intro h1 {
+            margin: 0;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(42px, 5.5vw, 68px);
+            font-weight: 400;
+            line-height: 1.08;
+            letter-spacing: -0.025em;
+        }
+
+        .collection-intro-text {
+            max-width: 500px;
+            margin: 8px 0 0;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           COLLECTION FEATURE
+        ========================== */
+
+        .collection-feature {
+            width: min(100%, var(--container));
+            margin-inline: auto;
+            padding: 0 var(--padding) 30px;
+            display: grid;
+            grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+            align-items: center;
+            gap: clamp(28px, 4vw, 50px);
+            box-sizing: border-box;
+        }
+
+        .collection-feature-image {
+            width: 100%;
+            max-height: 420px;
+            overflow: hidden;
+        }
+
+        .collection-feature-image img {
+            display: block;
+            width: 100%;
+            height: 420px;
+            aspect-ratio: auto;
+            object-fit: cover;
+        }
+
+        .collection-feature-copy {
+            max-width: 470px;
+        }
+
+        .collection-feature-copy .eyebrow {
+            margin-bottom: 7px;
+        }
+
+        .collection-feature-copy h2 {
+            margin: 0 0 10px;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(32px, 3.5vw, 46px);
+            font-weight: 400;
+            line-height: 1.12;
+            letter-spacing: -0.02em;
+        }
+
+        .collection-feature-copy p:last-child {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           COLLECTION PRODUCTS
+        ========================== */
+
+        .collection-products {
+            width: min(100%, var(--container));
+            margin-inline: auto;
+            padding: 30px var(--padding) 38px;
+            box-sizing: border-box;
+        }
+
+        .collection-products .section-heading {
+            margin-bottom: 20px;
+        }
+
+        .collection-products .section-heading h2 {
+            margin: 0;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(34px, 4vw, 50px);
+            font-weight: 400;
+            line-height: 1.12;
+            letter-spacing: -0.02em;
+        }
+
+        .collection-products .product-count {
+            margin: 0;
+            font-size: 12px;
+            letter-spacing: 0.08em;
+        }
+
+        .collection-grid {
+            margin-top: 0;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            column-gap: 20px;
+            row-gap: 0;
+        }
+
+        .collection-grid .product-card {
+            min-width: 0;
+        }
+
+        .collection-grid .product-image {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .collection-grid .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .collection-grid .product-info {
+            padding-top: 10px;
+        }
+
+        .collection-grid .product-info h3 {
+            margin: 0 0 5px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .collection-grid .product-info p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* =========================
+           COLLECTION STATEMENT
+        ========================== */
+
+        .collection-statement {
+            padding: 34px var(--padding) 42px;
+        }
+
+        .collection-statement-inner {
+            width: min(100%, var(--container));
+            margin-inline: auto;
+            text-align: center;
+        }
+
+        .collection-statement .eyebrow {
+            margin-bottom: 7px;
+        }
+
+        .collection-statement h2 {
+            max-width: 600px;
+            margin: 0 auto 14px;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(38px, 5vw, 60px);
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: -0.025em;
+        }
+
+        .collection-statement .text-link {
+            font-size: 13px;
+        }
+
+        /* =========================
+           TABLET
+        ========================== */
+
+        @media (max-width: 1000px) {
+
+            .collection-intro {
+                padding: 30px var(--padding) 20px;
+            }
+
+            .collection-feature {
+                padding-bottom: 28px;
+                grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.9fr);
+                gap: 28px;
+            }
+
+            .collection-feature-image {
+                max-height: 360px;
+            }
+
+            .collection-feature-image img {
+                height: 360px;
+            }
+
+            .collection-products {
+                padding-top: 28px;
+                padding-bottom: 34px;
+            }
+
+            .collection-grid {
+                column-gap: 18px;
+            }
+
+            .collection-grid .product-image {
+                height: 250px;
+            }
+
+            .collection-statement {
+                padding-top: 32px;
+                padding-bottom: 42px;
+            }
+
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 768px) {
+
+            .collection-intro {
+                padding: 28px 20px 22px;
+            }
+
+            .collection-intro h1 {
+                font-size: 38px;
+            }
+
+            .collection-intro-text {
+                margin-top: 9px;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+
+            .collection-feature {
+                width: 100%;
+                padding: 0 20px 30px;
+                grid-template-columns: 1fr;
+                gap: 19px;
+            }
+
+            .collection-feature-image {
+                max-height: 310px;
+            }
+
+            .collection-feature-image img {
+                height: 310px;
+            }
+
+            .collection-feature-copy {
+                max-width: none;
+            }
+
+            .collection-feature-copy h2 {
+                font-size: 30px;
+                margin-bottom: 9px;
+            }
+
+            .collection-feature-copy p:last-child {
+                font-size: 14px;
+                line-height: 1.6;
+            }
+
+            .collection-products {
+                width: 100%;
+                padding: 30px 20px 36px;
+            }
+
+            .collection-products .section-heading {
+                margin-bottom: 19px;
+            }
+
+            .collection-products .section-heading h2 {
+                font-size: 35px;
+            }
+
+            .collection-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                column-gap: 14px;
+                row-gap: 26px;
+            }
+
+            .collection-grid .product-image {
+                width: 100%;
+                max-width: none;
+                height: 210px;
+            }
+
+            .collection-grid .product-info {
+                padding-top: 10px;
+            }
+
+            .collection-grid .product-info h3 {
+                font-size: 15px;
+                margin-bottom: 4px;
+            }
+
+            .collection-grid .product-info p {
+                font-size: 13px;
+            }
+
+            .collection-statement {
+                padding: 34px 20px 42px;
+            }
+
+            .collection-statement h2 {
+                font-size: 36px;
+                margin-bottom: 14px;
+            }
+
+        }
+
+        /* =========================
+           SMALL MOBILE
+        ========================== */
+
+        @media (max-width: 480px) {
+
+            .collection-intro {
+                padding: 25px 20px 20px;
+            }
+
+            .collection-intro h1 {
+                font-size: 35px;
+            }
+
+            .collection-feature {
+                padding-bottom: 26px;
+                gap: 17px;
+            }
+
+            .collection-feature-image {
+                max-height: 260px;
+            }
+
+            .collection-feature-image img {
+                height: 260px;
+            }
+
+            .collection-feature-copy h2 {
+                font-size: 28px;
+            }
+
+            .collection-products {
+                padding-top: 28px;
+                padding-bottom: 34px;
+            }
+
+            .collection-products .section-heading h2 {
+                font-size: 32px;
+            }
+
+            .collection-grid {
+                column-gap: 12px;
+                row-gap: 24px;
+            }
+
+            .collection-grid .product-image {
+                height: 180px;
+            }
+
+            .collection-statement {
+                padding-top: 30px;
+                padding-bottom: 40px;
+            }
+
+            .collection-statement h2 {
+                font-size: 33px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+    <header class="site-header">
+
+        <div class="header-inner">
+
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Open menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+            </button>
+
+            <a href="../index.html" class="site-logo">
+                DREWANE
+            </a>
+
+            <nav class="desktop-nav" aria-label="Main navigation">
+                <a href="shop.html">Shop</a>
+                <a href="collection.html" class="active">Collections</a>
+                <a href="about.html">About</a>
+                <a href="journal.html">Journal</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="account.html">Account</a>
+                <a href="wishlist.html">Wishlist</a>
+                <a href="cart.html">
+                    Bag <span class="cart-count">(0)</span>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div class="mobile-menu" aria-hidden="true">
+
+            <nav class="mobile-nav" aria-label="Mobile navigation">
+
+                <a href="shop.html">Shop</a>
+                <a href="collection.html">Collections</a>
+                <a href="about.html">About</a>
+                <a href="journal.html">Journal</a>
+
+                <div class="mobile-nav-divider"></div>
+
+                <a href="account.html">Account</a>
+                <a href="wishlist.html">Wishlist</a>
+                <a href="cart.html">Shopping Bag</a>
+
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- =========================
+             COLLECTION INTRO
+        ========================== -->
+        <section class="collection-intro">
+
+            <div class="collection-intro-content">
+
+                <p class="eyebrow">
+                    DREWANE COLLECTION
+                </p>
+
+                <h1>
+                    The Form Collection
+                </h1>
+
+                <p class="collection-intro-text">
+                    Sculptural forms and refined materials for everyday distinction.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             COLLECTION IMAGE
+        ========================== -->
+        <section class="collection-feature">
+
+            <div class="collection-feature-image">
+                <img
+                    src="../assets/images/collection-01.webp"
+                    alt="DREWANE The Form Collection"
+                >
+            </div>
+
+            <div class="collection-feature-copy">
+
+                <p class="eyebrow">
+                    THE FORM COLLECTION
+                </p>
+
+                <h2>
+                    Designed around shape.
+                </h2>
+
+                <p>
+                    A study in proportion, balance, and quiet detail.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             COLLECTION PRODUCTS
+        ========================== -->
+        <section class="collection-products">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="eyebrow">
+                        THE COLLECTION
+                    </p>
+
+                    <h2>
+                        The Form Collection
+                    </h2>
+                </div>
+
+                <p class="product-count">
+                    04 Pieces
+                </p>
+
+            </div>
+
+
+            <div class="product-grid collection-grid">
+
+                <!-- Product 01 -->
+                <article class="product-card">
+
+                    <div class="product-image">
+
+                        <button
+                            class="wishlist-button"
+                            type="button"
+                            aria-label="Add Sculpt Ring to wishlist"
+                        >
+                            ♡
+                        </button>
+
+                        <a href="product.html">
+                            <img
+                                src="../assets/images/product-01.webp"
+                                alt="Sculpt Ring"
+                            >
+                        </a>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Sculpt Ring
+                        </h3>
+
+                        <p>
+                            $460
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Product 02 -->
+                <article class="product-card">
+
+                    <div class="product-image">
+
+                        <button
+                            class="wishlist-button"
+                            type="button"
+                            aria-label="Add Arc Necklace to wishlist"
+                        >
+                            ♡
+                        </button>
+
+                        <a href="product.html">
+                            <img
+                                src="../assets/images/product-02.webp"
+                                alt="Arc Necklace"
+                            >
+                        </a>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Arc Necklace
+                        </h3>
+
+                        <p>
+                            $720
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Product 03 -->
+                <article class="product-card">
+
+                    <div class="product-image">
+
+                        <button
+                            class="wishlist-button"
+                            type="button"
+                            aria-label="Add Contour Earrings to wishlist"
+                        >
+                            ♡
+                        </button>
+
+                        <a href="product.html">
+                            <img
+                                src="../assets/images/product-03.webp"
+                                alt="Contour Earrings"
+                            >
+                        </a>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Contour Earrings
+                        </h3>
+
+                        <p>
+                            $380
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Product 04 -->
+                <article class="product-card">
+
+                    <div class="product-image">
+
+                        <button
+                            class="wishlist-button"
+                            type="button"
+                            aria-label="Add No. 01 Bracelet to wishlist"
+                        >
+                            ♡
+                        </button>
+
+                        <a href="product.html">
+                            <img
+                                src="../assets/images/product-04.webp"
+                                alt="No. 01 Bracelet"
+                            >
+                        </a>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            No. 01 Bracelet
+                        </h3>
+
+                        <p>
+                            $540
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             COLLECTION STATEMENT
+        ========================== -->
+        <section class="collection-statement">
+
+            <div class="collection-statement-inner">
+
+                <p class="eyebrow">
+                    DREWANE
+                </p>
+
+                <h2>
+                    Quiet forms.
+                    Lasting presence.
+                </h2>
+
+                <a href="shop.html" class="text-link">
+                    Explore All Pieces
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer class="site-footer">
+
+        <div class="footer-main">
+
+            <div class="footer-column">
+
+                <h3>
+                    Client Services
+                </h3>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a href="shipping.html">
+                    Shipping
+                </a>
+
+                <a href="returns.html">
+                    Returns
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    About
+                </h3>
+
+                <a href="about.html">
+                    Our Story
+                </a>
+
+                <a href="journal.html">
+                    Journal
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Legal
+                </h3>
+
+                <a href="privacy.html">
+                    Privacy
+                </a>
+
+                <a href="terms.html">
+                    Terms
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Social
+                </h3>
+
+                <a
+                    href="#"
+                    aria-label="Instagram"
+                >
+                    Instagram
+                </a>
+
+                <a
+                    href="#"
+                    aria-label="TikTok"
+                >
+                    TikTok
+                </a>
+
+                <a
+                    href="#"
+                    aria-label="Pinterest"
+                >
+                    Pinterest
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                ©️ 2026 DREWANE
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="../js/script.js"></script>
+
+</body>
+</html>

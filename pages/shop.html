@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shop — DREWANE</title>
+    <meta
+        name="description"
+        content="Explore the DREWANE collection of jewelry and fragrance."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <style>
+        /* =========================
+           SHOP PAGE
+        ========================== */
+
+        .shop-intro {
+            width: min(100%, var(--container));
+            margin-inline: auto;
+            padding: 52px var(--padding) 38px;
+            box-sizing: border-box;
+        }
+
+        .shop-intro .section-label {
+            margin-bottom: 9px;
+        }
+
+        .shop-intro h1 {
+            margin: 0;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(42px, 5vw, 62px);
+            font-weight: 400;
+            line-height: 1.08;
+            letter-spacing: -0.025em;
+        }
+
+        .shop-intro > p:last-child {
+            max-width: 480px;
+            margin: 14px 0 0;
+            font-size: 15px;
+            line-height: 1.65;
+        }
+
+        /* =========================
+           SHOP CONTROLS
+        ========================== */
+
+        .shop-controls {
+            width: min(100%, var(--container));
+            margin-inline: auto;
+            padding: 0 var(--padding) 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+            box-sizing: border-box;
+        }
+
+        .category-filter {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 7px;
+        }
+
+        .filter-button {
+            padding: 7px 12px;
+            border: 1px solid currentColor;
+            background: transparent;
+            font: inherit;
+            font-size: 12px;
+            line-height: 1.2;
+            cursor: pointer;
+        }
+
+        .filter-button.is-active {
+            outline: 1px solid currentColor;
+            outline-offset: -3px;
+        }
+
+        .shop-sort {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            flex-shrink: 0;
+        }
+
+        .shop-sort label {
+            font-size: 12px;
+        }
+
+        .shop-sort select {
+            min-height: 34px;
+            padding: 6px 28px 6px 9px;
+            border: 1px solid currentColor;
+            border-radius: 0;
+            background: transparent;
+            font: inherit;
+            font-size: 12px;
+        }
+
+        /* =========================
+           PRODUCT GRID
+        ========================== */
+
+        .shop-products {
+            width: min(100%, var(--container));
+            margin-inline: auto;
+            padding: 0 var(--padding) 65px;
+            box-sizing: border-box;
+        }
+
+        .shop-products .product-grid {
+            column-gap: 24px;
+            row-gap: 45px;
+        }
+
+        .shop-products .product-card {
+            min-width: 0;
+        }
+
+        .shop-products .product-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shop-products .product-image img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .shop-products .product-info {
+            padding-top: 14px;
+        }
+
+        .shop-products .product-info h2 {
+            margin: 0 0 5px;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.3;
+        }
+
+        .shop-products .product-info p {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        /* =========================
+           TABLET
+        ========================== */
+
+        @media (max-width: 1000px) {
+
+            .shop-intro {
+                padding: 45px var(--padding) 34px;
+            }
+
+            .shop-controls {
+                padding-bottom: 27px;
+                gap: 20px;
+            }
+
+            .category-filter {
+                gap: 6px;
+            }
+
+            .filter-button {
+                padding: 7px 10px;
+            }
+
+            .shop-products {
+                padding-bottom: 55px;
+            }
+
+            .shop-products .product-grid {
+                column-gap: 20px;
+                row-gap: 40px;
+            }
+
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 768px) {
+
+            .shop-intro {
+                width: 100%;
+                padding: 36px 20px 28px;
+            }
+
+            .shop-intro h1 {
+                font-size: 38px;
+            }
+
+            .shop-intro > p:last-child {
+                margin-top: 11px;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+
+            .shop-controls {
+                width: 100%;
+                padding: 0 20px 24px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+
+            .category-filter {
+                width: 100%;
+                gap: 6px;
+            }
+
+            .filter-button {
+                padding: 7px 10px;
+                font-size: 11px;
+            }
+
+            .shop-sort {
+                width: 100%;
+                justify-content: flex-end;
+            }
+
+            .shop-products {
+                width: 100%;
+                padding: 0 20px 48px;
+            }
+
+            .shop-products .product-grid {
+                column-gap: 15px;
+                row-gap: 34px;
+            }
+
+            .shop-products .product-info {
+                padding-top: 11px;
+            }
+
+            .shop-products .product-info h2 {
+                margin-bottom: 4px;
+                font-size: 14px;
+            }
+
+            .shop-products .product-info p {
+                font-size: 13px;
+            }
+
+        }
+
+        /* =========================
+           SMALL MOBILE
+        ========================== */
+
+        @media (max-width: 480px) {
+
+            .shop-intro {
+                padding: 31px 20px 25px;
+            }
+
+            .shop-intro h1 {
+                font-size: 35px;
+            }
+
+            .shop-controls {
+                padding-bottom: 21px;
+                gap: 14px;
+            }
+
+            .category-filter {
+                gap: 5px;
+            }
+
+            .filter-button {
+                padding: 6px 8px;
+                font-size: 10px;
+            }
+
+            .shop-products {
+                padding-bottom: 42px;
+            }
+
+            .shop-products .product-grid {
+                column-gap: 12px;
+                row-gap: 30px;
+            }
+
+            .shop-products .product-info h2 {
+                font-size: 13px;
+            }
+
+            .shop-products .product-info p {
+                font-size: 12px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+
+        <div class="header-inner">
+
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Open menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+            </button>
+
+            <a href="../index.html" class="site-logo">
+                DREWANE
+            </a>
+
+            <nav class="desktop-nav" aria-label="Main navigation">
+                <a href="shop.html">Shop</a>
+                <a href="collection.html">Collections</a>
+                <a href="about.html">About</a>
+                <a href="journal.html">Journal</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="account.html">Account</a>
+                <a href="wishlist.html">Wishlist</a>
+                <a href="cart.html">
+                    Bag <span class="cart-count">(0)</span>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- MOBILE MENU -->
+        <div class="mobile-menu" aria-hidden="true">
+
+            <nav class="mobile-nav" aria-label="Mobile navigation">
+
+                <a href="shop.html">Shop</a>
+                <a href="collection.html">Collections</a>
+                <a href="about.html">About</a>
+                <a href="journal.html">Journal</a>
+
+                <div class="mobile-nav-divider"></div>
+
+                <a href="account.html">Account</a>
+                <a href="wishlist.html">Wishlist</a>
+                <a href="cart.html">Shopping Bag</a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- SHOP INTRO -->
+        <section class="shop-intro">
+
+            <p class="section-label">
+                DREWANE / SHOP
+            </p>
+
+            <h1>
+                The Collection
+            </h1>
+
+            <p>
+                Jewelry and fragrance designed with
+                quiet distinction.
+            </p>
+
+        </section>
+
+
+        <!-- SHOP CONTROLS -->
+        <section class="shop-controls">
+
+            <div class="category-filter">
+
+                <button
+                    type="button"
+                    class="filter-button is-active"
+                    data-category="all"
+                >
+                    All
+                </button>
+
+                <button
+                    type="button"
+                    class="filter-button"
+                    data-category="jewelry"
+                >
+                    Jewelry
+                </button>
+
+                <button
+                    type="button"
+                    class="filter-button"
+                    data-category="rings"
+                >
+                    Rings
+                </button>
+
+                <button
+                    type="button"
+                    class="filter-button"
+                    data-category="necklaces"
+                >
+                    Necklaces
+                </button>
+
+                <button
+                    type="button"
+                    class="filter-button"
+                    data-category="earrings"
+                >
+                    Earrings
+                </button>
+
+                <button
+                    type="button"
+                    class="filter-button"
+                    data-category="bracelets"
+                >
+                    Bracelets
+                </button>
+
+                <button
+                    type="button"
+                    class="filter-button"
+                    data-category="fragrance"
+                >
+                    Fragrance
+                </button>
+
+            </div>
+
+            <div class="shop-sort">
+
+                <label for="sort-products">
+                    Sort
+                </label>
+
+                <select id="sort-products" name="sort">
+                    <option value="featured">Featured</option>
+                    <option value="newest">Newest</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                </select>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRODUCT GRID -->
+        <section class="shop-products">
+
+            <div class="product-grid"></div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <div class="footer-main">
+
+            <div class="footer-column">
+
+                <h3>
+                    Client Services
+                </h3>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a href="shipping.html">
+                    Shipping
+                </a>
+
+                <a href="returns.html">
+                    Returns
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    About
+                </h3>
+
+                <a href="about.html">
+                    Our Story
+                </a>
+
+                <a href="journal.html">
+                    Journal
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Legal
+                </h3>
+
+                <a href="privacy.html">
+                    Privacy
+                </a>
+
+                <a href="terms.html">
+                    Terms
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Social
+                </h3>
+
+                <a
+                    href="#"
+                    aria-label="Instagram"
+                >
+                    Instagram
+                </a>
+
+                <a
+                    href="#"
+                    aria-label="TikTok"
+                >
+                    TikTok
+                </a>
+
+                <a
+                    href="#"
+                    aria-label="Pinterest"
+                >
+                    Pinterest
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                ©️ 2026 DREWANE
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="../js/script.js"></script>
+
+</body>
+</html>

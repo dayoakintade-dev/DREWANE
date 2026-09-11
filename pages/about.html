@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About DREWANE — Jewelry & Fragrance</title>
+
+    <meta
+        name="description"
+        content="Discover the story, philosophy, and craftsmanship behind DREWANE."
+    >
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <style>
+        /* =========================
+           ABOUT PAGE
+        ========================== */
+
+        .about-intro {
+            width: 100%;
+            background: var(--dark);
+            color: var(--light);
+            padding: 55px var(--padding) 48px;
+            box-sizing: border-box;
+        }
+
+        .about-intro-inner {
+            width: min(100%, var(--container));
+            margin: 0 auto;
+            max-width: 820px;
+        }
+
+        .about-intro .eyebrow,
+        .about-story-content .eyebrow,
+        .section-heading .eyebrow,
+        .about-craftsmanship-content .eyebrow,
+        .about-closing-inner .eyebrow {
+            margin: 0 0 10px;
+            color: var(--muted);
+            font-size: 10px;
+            line-height: 1.4;
+            font-weight: 600;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+        }
+
+        .about-intro h1 {
+            margin: 0 0 14px;
+            max-width: 700px;
+            font-family: "Playfair Display", serif;
+            color: var(--light);
+            font-size: clamp(40px, 4.8vw, 58px);
+            line-height: 1.06;
+            font-weight: 500;
+            letter-spacing: -.03em;
+        }
+
+        .about-intro-text {
+            max-width: 560px;
+            margin: 0;
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.65;
+        }
+
+
+        /* =========================
+           BRAND STORY
+        ========================== */
+
+        .about-story {
+            width: min(100%, var(--container));
+            margin: 0 auto;
+            padding: 58px var(--padding) 65px;
+            display: grid;
+            grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+            gap: clamp(35px, 6vw, 75px);
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .about-story-image {
+            width: 100%;
+            max-width: 520px;
+            overflow: hidden;
+        }
+
+        .about-story-image img {
+            display: block;
+            width: 100%;
+            height: 380px;
+            aspect-ratio: auto;
+            object-fit: cover;
+        }
+
+        .about-story-content {
+            max-width: 520px;
+        }
+
+        .about-story-content h2 {
+            margin: 0 0 16px;
+            color: var(--light);
+            font-family: "Playfair Display", serif;
+            font-size: clamp(32px, 3.4vw, 46px);
+            line-height: 1.1;
+            font-weight: 500;
+            letter-spacing: -.025em;
+        }
+
+        .about-story-content p:not(.eyebrow) {
+            margin: 0 0 14px;
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .about-story-content p:last-child {
+            margin-bottom: 0;
+        }
+
+
+        /* =========================
+           PHILOSOPHY
+        ========================== */
+
+        .about-philosophy {
+            width: 100%;
+            padding: 62px var(--padding) 68px;
+            background: var(--dark);
+            color: var(--light);
+            box-sizing: border-box;
+        }
+
+        .about-philosophy .section-heading {
+            width: min(100%, var(--container));
+            margin: 0 auto;
+            max-width: 760px;
+        }
+
+        .section-heading h2 {
+            margin: 0;
+            color: var(--light);
+            font-family: "Playfair Display", serif;
+            font-size: clamp(36px, 4vw, 52px);
+            line-height: 1.08;
+            font-weight: 500;
+            letter-spacing: -.03em;
+        }
+
+        .philosophy-grid {
+            width: min(100%, var(--container));
+            margin: 40px auto 0;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 28px;
+        }
+
+        .philosophy-item {
+            padding-top: 17px;
+            border-top: 1px solid rgba(243, 238, 231, .18);
+        }
+
+        .philosophy-number {
+            display: block;
+            margin-bottom: 20px;
+            color: var(--muted);
+            font-size: 10px;
+            line-height: 1.4;
+            font-weight: 600;
+            letter-spacing: .12em;
+        }
+
+        .philosophy-item h3 {
+            margin: 0 0 10px;
+            color: var(--light);
+            font-family: "Playfair Display", serif;
+            font-size: 25px;
+            line-height: 1.15;
+            font-weight: 500;
+        }
+
+        .philosophy-item p {
+            max-width: 340px;
+            margin: 0;
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           CRAFTSMANSHIP
+        ========================== */
+
+        .about-craftsmanship {
+            width: min(100%, var(--container));
+            margin: 0 auto;
+            padding: 65px var(--padding);
+            display: grid;
+            grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+            gap: clamp(35px, 6vw, 75px);
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .about-craftsmanship-content {
+            max-width: 520px;
+        }
+
+        .about-craftsmanship-content h2 {
+            margin: 0 0 16px;
+            color: var(--light);
+            font-family: "Playfair Display", serif;
+            font-size: clamp(34px, 3.4vw, 46px);
+            line-height: 1.1;
+            font-weight: 500;
+            letter-spacing: -.025em;
+        }
+
+        .about-craftsmanship-content p:not(.eyebrow) {
+            margin: 0 0 14px;
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .about-craftsmanship-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .about-craftsmanship-image {
+            width: 100%;
+            max-width: 520px;
+            overflow: hidden;
+        }
+
+        .about-craftsmanship-image img {
+            display: block;
+            width: 100%;
+            height: 380px;
+            aspect-ratio: auto;
+            object-fit: cover;
+        }
+
+
+        /* =========================
+           CLOSING STATEMENT
+        ========================== */
+
+        .about-closing {
+            width: 100%;
+            padding: 70px var(--padding) 78px;
+            background: var(--dark);
+            color: var(--light);
+            box-sizing: border-box;
+        }
+
+        .about-closing-inner {
+            width: min(100%, var(--container));
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        .about-closing-inner h2 {
+            max-width: 700px;
+            margin: 0 0 24px;
+            color: var(--light);
+            font-family: "Playfair Display", serif;
+            font-size: clamp(40px, 4.8vw, 58px);
+            line-height: 1.05;
+            font-weight: 500;
+            letter-spacing: -.03em;
+        }
+
+        .about-closing .text-link {
+            display: inline-block;
+            color: var(--light);
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 1.5;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(243, 238, 231, .4);
+            padding-bottom: 4px;
+            transition: border-color .2s ease;
+        }
+
+        .about-closing .text-link:hover {
+            border-bottom-color: var(--light);
+        }
+
+
+        /* =========================
+           TABLET
+        ========================== */
+
+        @media (max-width: 1000px) {
+
+            .about-intro {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+
+            .about-story {
+                gap: 35px;
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+
+            .about-philosophy {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+
+            .about-craftsmanship {
+                gap: 35px;
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+
+            .about-closing {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+
+            .philosophy-grid {
+                gap: 22px;
+            }
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 768px) {
+
+            .about-intro {
+                padding: 42px 20px 36px;
+            }
+
+            .about-intro-inner {
+                width: 100%;
+            }
+
+            .about-intro .eyebrow,
+            .about-story-content .eyebrow,
+            .section-heading .eyebrow,
+            .about-craftsmanship-content .eyebrow,
+            .about-closing-inner .eyebrow {
+                margin-bottom: 9px;
+                font-size: 10px;
+            }
+
+            .about-intro h1 {
+                margin-bottom: 12px;
+                font-size: 36px;
+                line-height: 1.05;
+            }
+
+            .about-intro-text {
+                font-size: 14px;
+                line-height: 1.65;
+            }
+
+
+            /* Brand Story */
+
+            .about-story {
+                width: 100%;
+                padding: 42px 20px 48px;
+                display: flex;
+                flex-direction: column;
+                gap: 28px;
+                align-items: stretch;
+            }
+
+            .about-story-image {
+                max-width: 100%;
+            }
+
+            .about-story-image img {
+                height: 300px;
+                aspect-ratio: auto;
+            }
+
+            .about-story-content {
+                max-width: none;
+            }
+
+            .about-story-content h2 {
+                margin-bottom: 13px;
+                font-size: 31px;
+            }
+
+            .about-story-content p:not(.eyebrow) {
+                margin-bottom: 12px;
+                font-size: 14px;
+                line-height: 1.7;
+            }
+
+
+            /* Philosophy */
+
+            .about-philosophy {
+                padding: 46px 20px 50px;
+            }
+
+            .about-philosophy .section-heading {
+                width: 100%;
+            }
+
+            .section-heading h2 {
+                font-size: 34px;
+                line-height: 1.08;
+            }
+
+            .philosophy-grid {
+                width: 100%;
+                margin-top: 30px;
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .philosophy-item {
+                padding: 19px 0 23px;
+            }
+
+            .philosophy-number {
+                margin-bottom: 16px;
+            }
+
+            .philosophy-item h3 {
+                margin-bottom: 9px;
+                font-size: 25px;
+            }
+
+            .philosophy-item p {
+                max-width: none;
+                font-size: 14px;
+                line-height: 1.7;
+            }
+
+
+            /* Craftsmanship */
+
+            .about-craftsmanship {
+                width: 100%;
+                padding: 48px 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 28px;
+                align-items: stretch;
+            }
+
+            .about-craftsmanship-content {
+                max-width: none;
+            }
+
+            .about-craftsmanship-content h2 {
+                margin-bottom: 13px;
+                font-size: 31px;
+            }
+
+            .about-craftsmanship-content p:not(.eyebrow) {
+                margin-bottom: 12px;
+                font-size: 14px;
+                line-height: 1.7;
+            }
+
+            .about-craftsmanship-image {
+                max-width: 100%;
+            }
+
+            .about-craftsmanship-image img {
+                height: 300px;
+                aspect-ratio: auto;
+            }
+
+
+            /* Closing */
+
+            .about-closing {
+                padding: 52px 20px 58px;
+            }
+
+            .about-closing-inner {
+                width: 100%;
+            }
+
+            .about-closing-inner h2 {
+                margin-bottom: 22px;
+                font-size: 37px;
+                line-height: 1.05;
+            }
+        }
+
+
+        /* =========================
+           SMALL MOBILE
+        ========================== */
+
+        @media (max-width: 480px) {
+
+            .about-intro h1 {
+                font-size: 34px;
+            }
+
+            .about-story-content h2,
+            .about-craftsmanship-content h2 {
+                font-size: 29px;
+            }
+
+            .section-heading h2 {
+                font-size: 32px;
+            }
+
+            .about-closing-inner h2 {
+                font-size: 35px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         SITE HEADER
+    ========================== -->
+    <header class="site-header">
+
+        <div class="header-inner">
+
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Open menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+            </button>
+
+            <a href="../index.html" class="site-logo">
+                DREWANE
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav" aria-label="Main navigation">
+
+                <a href="shop.html">
+                    Shop
+                </a>
+
+                <a href="collection.html">
+                    Collections
+                </a>
+
+                <a href="about.html" class="active">
+                    About
+                </a>
+
+                <a href="journal.html">
+                    Journal
+                </a>
+
+            </nav>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+
+                <a href="account.html">
+                    Account
+                </a>
+
+                <a href="wishlist.html">
+                    Wishlist
+                </a>
+
+                <a href="cart.html">
+                    Bag <span class="cart-count">(0)</span>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             MOBILE MENU
+        ========================== -->
+        <div class="mobile-menu" aria-hidden="true">
+
+            <nav class="mobile-nav" aria-label="Mobile navigation">
+
+                <a href="shop.html">
+                    Shop
+                </a>
+
+                <a href="collection.html">
+                    Collections
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="journal.html">
+                    Journal
+                </a>
+
+                <div class="mobile-nav-divider"></div>
+
+                <a href="account.html">
+                    Account
+                </a>
+
+                <a href="wishlist.html">
+                    Wishlist
+                </a>
+
+                <a href="cart.html">
+                    Shopping Bag
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+    <main>
+
+        <!-- =========================
+             ABOUT INTRO
+        ========================== -->
+        <section class="about-intro">
+
+            <div class="about-intro-inner">
+
+                <p class="eyebrow">
+                    ABOUT DREWANE
+                </p>
+
+                <h1>
+                    Designed with intention.
+                </h1>
+
+                <p class="about-intro-text">
+                    DREWANE creates jewelry and fragrance shaped by
+                    simplicity, considered form, and lasting beauty.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             BRAND STORY
+        ========================== -->
+        <section class="about-story">
+
+            <div class="about-story-image">
+
+                <img
+                    src="../assets/images/about-01.webp"
+                    alt="DREWANE jewelry editorial"
+                >
+
+            </div>
+
+
+            <div class="about-story-content">
+
+                <p class="eyebrow">
+                    OUR APPROACH
+                </p>
+
+                <h2>
+                    Objects of quiet distinction.
+                </h2>
+
+                <p>
+                    DREWANE was created around a simple idea:
+                    beautiful objects do not need to demand attention.
+                </p>
+
+                <p>
+                    Our jewelry and fragrance are designed with a
+                    restrained point of view — balancing distinctive
+                    forms with the ease of everyday wear.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PHILOSOPHY
+        ========================== -->
+        <section class="about-philosophy">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    OUR PHILOSOPHY
+                </p>
+
+                <h2>
+                    Less, considered carefully.
+                </h2>
+
+            </div>
+
+
+            <div class="philosophy-grid">
+
+                <!-- Philosophy 01 -->
+                <article class="philosophy-item">
+
+                    <span class="philosophy-number">
+                        01
+                    </span>
+
+                    <h3>
+                        Form
+                    </h3>
+
+                    <p>
+                        Considered silhouettes and proportions create
+                        pieces that feel distinctive without excess.
+                    </p>
+
+                </article>
+
+
+                <!-- Philosophy 02 -->
+                <article class="philosophy-item">
+
+                    <span class="philosophy-number">
+                        02
+                    </span>
+
+                    <h3>
+                        Material
+                    </h3>
+
+                    <p>
+                        Refined materials are selected for their
+                        character, finish, and ability to endure.
+                    </p>
+
+                </article>
+
+
+                <!-- Philosophy 03 -->
+                <article class="philosophy-item">
+
+                    <span class="philosophy-number">
+                        03
+                    </span>
+
+                    <h3>
+                        Longevity
+                    </h3>
+
+                    <p>
+                        We design pieces intended to remain relevant
+                        beyond a single season.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CRAFTSMANSHIP
+        ========================== -->
+        <section class="about-craftsmanship">
+
+            <div class="about-craftsmanship-content">
+
+                <p class="eyebrow">
+                    CRAFTSMANSHIP
+                </p>
+
+                <h2>
+                    Made with intention.
+                </h2>
+
+                <p>
+                    From the first silhouette to the final finish,
+                    every DREWANE piece is approached with patience
+                    and attention to detail.
+                </p>
+
+                <p>
+                    We believe craftsmanship is found in the small
+                    decisions — the balance of a shape, the weight
+                    of a piece, and the way it settles naturally
+                    into everyday life.
+                </p>
+
+            </div>
+
+
+            <div class="about-craftsmanship-image">
+
+                <img
+                    src="../assets/images/about-02.webp"
+                    alt="DREWANE craftsmanship detail"
+                >
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CLOSING STATEMENT
+        ========================== -->
+        <section class="about-closing">
+
+            <div class="about-closing-inner">
+
+                <p class="eyebrow">
+                    DREWANE
+                </p>
+
+                <h2>
+                    Beauty doesn't need
+                    to announce itself.
+                </h2>
+
+                <a href="collection.html" class="text-link">
+                    Explore The Collection
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         SITE FOOTER
+    ========================== -->
+    <footer class="site-footer">
+
+        <div class="footer-main">
+
+            <div class="footer-column">
+
+                <h3>Client Services</h3>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a href="shipping.html">
+                    Shipping
+                </a>
+
+                <a href="returns.html">
+                    Returns
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>About</h3>
+
+                <a href="about.html">
+                    Our Story
+                </a>
+
+                <a href="journal.html">
+                    Journal
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Legal</h3>
+
+                <a href="privacy.html">
+                    Privacy
+                </a>
+
+                <a href="terms.html">
+                    Terms
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Social</h3>
+
+                <a
+                    href="#"
+                    aria-label="Instagram"
+                >
+                    Instagram
+                </a>
+
+                <a
+                    href="#"
+                    aria-label="TikTok"
+                >
+                    TikTok
+                </a>
+
+                <a
+                    href="#"
+                    aria-label="Pinterest"
+                >
+                    Pinterest
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+
+            <p>
+                ©️ 2026 DREWANE
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="../js/script.js"></script>
+
+</body>
+</html>

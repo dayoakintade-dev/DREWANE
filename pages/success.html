@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Order Confirmed — DREWANE</title>
+
+    <meta
+        name="description"
+        content="Your DREWANE order has been successfully placed."
+    >
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <style>
+        /* =========================
+           SUCCESS PAGE
+        ========================== */
+
+        .success-page {
+            min-height: 100vh;
+            background: #3A2721;
+            color: #F7F2EA;
+        }
+
+        .success-header {
+            width: 100%;
+            border-bottom: 1px solid rgba(247, 242, 234, 0.12);
+            background: #3A2721;
+        }
+
+        .success-header-inner {
+            width: min(100%, 1280px);
+            min-height: 68px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+
+        .success-logo {
+            color: #F7F2EA;
+            text-decoration: none;
+            font-family: "DM Sans", sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+        }
+
+
+        /* =========================
+           SUCCESS SECTION
+        ========================== */
+
+        .success-section {
+            width: 100%;
+            padding: 55px 40px 65px;
+            box-sizing: border-box;
+        }
+
+        .success-container {
+            width: min(100%, 760px);
+            margin: 0 auto;
+        }
+
+
+        /* =========================
+           CONFIRMATION
+        ========================== */
+
+        .success-message {
+            text-align: center;
+        }
+
+        .success-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(247, 242, 234, 0.55);
+            border-radius: 50%;
+            color: #F7F2EA;
+            font-family: "DM Sans", sans-serif;
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        .success-page .eyebrow {
+            margin: 0 0 10px;
+            color: rgba(247, 242, 234, 0.72);
+            font-family: "DM Sans", sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            line-height: 1.5;
+        }
+
+        .success-message h1 {
+            max-width: 650px;
+            margin: 0 auto;
+            color: #F7F2EA;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(38px, 5vw, 58px);
+            font-weight: 400;
+            line-height: 1.08;
+            letter-spacing: -0.02em;
+        }
+
+        .success-intro {
+            max-width: 570px;
+            margin: 18px auto 0;
+            color: rgba(247, 242, 234, 0.78);
+            font-family: "DM Sans", sans-serif;
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 1.7;
+        }
+
+        .order-reference {
+            margin: 26px auto 0;
+            padding: 15px 24px;
+            border-top: 1px solid rgba(247, 242, 234, 0.12);
+            border-bottom: 1px solid rgba(247, 242, 234, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            box-sizing: border-box;
+        }
+
+        .order-reference span {
+            color: rgba(247, 242, 234, 0.62);
+            font-family: "DM Sans", sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.16em;
+        }
+
+        .order-reference strong {
+            color: #F7F2EA;
+            font-family: "DM Sans", sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+        }
+
+
+        /* =========================
+           ORDER SUMMARY
+        ========================== */
+
+        .success-order {
+            margin-top: 45px;
+            padding: 32px;
+            border: 1px solid rgba(247, 242, 234, 0.14);
+            background: rgba(13, 13, 11, 0.18);
+            box-sizing: border-box;
+        }
+
+        .success-order-heading {
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(247, 242, 234, 0.12);
+        }
+
+        .success-order-heading .eyebrow {
+            margin-bottom: 8px;
+        }
+
+        .success-order-heading h2 {
+            margin: 0;
+            color: #F7F2EA;
+            font-family: "Playfair Display", serif;
+            font-size: 30px;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .success-products {
+            padding: 8px 0 0;
+        }
+
+        .success-products > * {
+            border-bottom: 1px solid rgba(247, 242, 234, 0.10);
+        }
+
+        .success-summary {
+            padding-top: 20px;
+        }
+
+        .summary-row {
+            min-height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            color: rgba(247, 242, 234, 0.76);
+            font-family: "DM Sans", sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .summary-divider {
+            width: 100%;
+            height: 1px;
+            margin: 12px 0;
+            background: rgba(247, 242, 234, 0.12);
+        }
+
+        .summary-total {
+            color: #F7F2EA;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+
+        /* =========================
+           ACTIONS
+        ========================== */
+
+        .success-actions {
+            margin-top: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .success-actions .button {
+            min-width: 210px;
+            min-height: 50px;
+            padding: 15px 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            background: #F7F2EA;
+            color: #3A2721;
+            border: 1px solid #F7F2EA;
+            text-decoration: none;
+            font-family: "DM Sans", sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: opacity 0.2s ease;
+        }
+
+        .success-actions .button:hover {
+            opacity: 0.88;
+        }
+
+        .success-actions .text-link {
+            color: #F7F2EA;
+            text-decoration: none;
+            font-family: "DM Sans", sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(247, 242, 234, 0.65);
+            padding-bottom: 4px;
+            transition: opacity 0.2s ease;
+        }
+
+        .success-actions .text-link:hover {
+            opacity: 0.72;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        .success-footer {
+            width: 100%;
+            padding: 28px 40px;
+            border-top: 1px solid rgba(247, 242, 234, 0.12);
+            background: #3A2721;
+            box-sizing: border-box;
+        }
+
+        .success-footer-inner {
+            width: min(100%, 1280px);
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .success-footer-inner p {
+            margin: 0;
+            color: rgba(247, 242, 234, 0.58);
+            font-family: "DM Sans", sans-serif;
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        .success-footer-links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 22px;
+        }
+
+        .success-footer-links a {
+            color: rgba(247, 242, 234, 0.68);
+            text-decoration: none;
+            font-family: "DM Sans", sans-serif;
+            font-size: 11px;
+            transition: opacity 0.2s ease;
+        }
+
+        .success-footer-links a:hover {
+            opacity: 0.72;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 768px) {
+
+            .success-header-inner {
+                min-height: 62px;
+                padding: 0 20px;
+            }
+
+            .success-section {
+                padding: 42px 20px 55px;
+            }
+
+            .success-message h1 {
+                font-size: 40px;
+            }
+
+            .success-intro {
+                font-size: 14px;
+                line-height: 1.65;
+            }
+
+            .order-reference {
+                flex-direction: column;
+                gap: 6px;
+                padding: 14px 15px;
+            }
+
+            .success-order {
+                margin-top: 38px;
+                padding: 24px 20px;
+            }
+
+            .success-order-heading h2 {
+                font-size: 27px;
+            }
+
+            .success-actions {
+                flex-direction: column;
+                gap: 18px;
+                margin-top: 28px;
+            }
+
+            .success-actions .button {
+                width: 100%;
+            }
+
+            .success-footer {
+                padding: 25px 20px;
+            }
+
+            .success-footer-inner {
+                flex-direction: column;
+                gap: 18px;
+                text-align: center;
+            }
+
+            .success-footer-links {
+                flex-wrap: wrap;
+                gap: 14px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body class="success-page">
+
+    <!-- =========================
+         SUCCESS HEADER
+    ========================== -->
+    <header class="success-header">
+
+        <div class="success-header-inner">
+
+            <a href="../index.html" class="success-logo">
+                DREWANE
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+    <main>
+
+        <section class="success-section">
+
+            <div class="success-container">
+
+                <!-- Confirmation -->
+                <div class="success-message">
+
+                    <div
+                        class="success-icon"
+                        aria-hidden="true"
+                    >
+                        ✓
+                    </div>
+
+                    <p class="eyebrow">
+                        ORDER CONFIRMED
+                    </p>
+
+                    <h1>
+                        Thank you for your order.
+                    </h1>
+
+                    <p class="success-intro">
+                        Your order has been successfully placed.
+                        We'll send your confirmation and delivery
+                        updates to your email address.
+                    </p>
+
+
+                    <!-- Dynamic Order Number -->
+                    <div class="order-reference">
+
+                        <span>
+                            ORDER REFERENCE
+                        </span>
+
+                        <strong id="order-number">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     ORDER SUMMARY
+                ========================== -->
+                <div class="success-order">
+
+                    <div class="success-order-heading">
+
+                        <p class="eyebrow">
+                            YOUR ORDER
+                        </p>
+
+                        <h2>
+                            Order Summary
+                        </h2>
+
+                    </div>
+
+
+                    <!--
+                        JavaScript will render the actual
+                        purchased products here.
+                    -->
+                    <div
+                        class="success-products"
+                        id="success-products"
+                    >
+
+                        <!-- Purchased products will be rendered here -->
+
+                    </div>
+
+
+                    <!-- Dynamic Order Totals -->
+                    <div class="success-summary">
+
+                        <div class="summary-row">
+
+                            <span>
+                                Subtotal
+                            </span>
+
+                            <span id="success-subtotal">
+                                $0
+                            </span>
+
+                        </div>
+
+
+                        <div class="summary-row">
+
+                            <span>
+                                Shipping
+                            </span>
+
+                            <span id="success-shipping">
+                                $0
+                            </span>
+
+                        </div>
+
+
+                        <div class="summary-divider"></div>
+
+
+                        <div class="summary-row summary-total">
+
+                            <span>
+                                Total
+                            </span>
+
+                            <span id="success-total">
+                                $0
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     NEXT STEPS
+                ========================== -->
+                <div class="success-actions">
+
+                    <a
+                        href="shop.html"
+                        class="button"
+                    >
+                        Continue Shopping
+                    </a>
+
+                    <a
+                        href="account.html"
+                        class="text-link"
+                    >
+                        View Your Account
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         MINIMAL SUCCESS FOOTER
+    ========================== -->
+    <footer class="success-footer">
+
+        <div class="success-footer-inner">
+
+            <p>
+                ©️ 2026 DREWANE
+            </p>
+
+            <div class="success-footer-links">
+
+                <a href="privacy.html">
+                    Privacy
+                </a>
+
+                <a href="terms.html">
+                    Terms
+                </a>
+
+                <a href="shipping.html">
+                    Shipping
+                </a>
+
+                <a href="returns.html">
+                    Returns
+                </a>
+
+            </div>
+
+            <p>
+                United States / USD ($)
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="../js/script.js"></script>
+
+</body>
+</html>

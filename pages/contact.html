@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact — DREWANE</title>
+
+    <meta
+        name="description"
+        content="Contact DREWANE client services for assistance with orders, products, shipping, and returns."
+    >
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <style>
+        /* =========================
+           CONTACT PAGE
+        ========================== */
+
+        .customer-page {
+            width: 100%;
+            background: var(--dark);
+            color: var(--light);
+        }
+
+        .contact-intro {
+            width: 100%;
+            padding: 65px var(--padding) 48px;
+        }
+
+        .contact-intro-inner {
+            width: min(100%, var(--container));
+            margin: 0 auto;
+            max-width: 900px;
+        }
+
+        .contact-intro .eyebrow,
+        .contact-info-block .eyebrow,
+        .contact-form-heading .eyebrow,
+        .contact-help .eyebrow {
+            margin: 0 0 12px;
+            font-size: 11px;
+            line-height: 1.4;
+            letter-spacing: .14em;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .contact-intro h1 {
+            margin: 0 0 16px;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(48px, 6vw, 76px);
+            line-height: .98;
+            font-weight: 500;
+            letter-spacing: -.035em;
+            color: var(--light);
+        }
+
+        .contact-intro-inner > p:last-child {
+            max-width: 520px;
+            margin: 0;
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.65;
+        }
+
+
+        /* =========================
+           CONTACT SECTION
+        ========================== */
+
+        .contact-section {
+            width: 100%;
+            padding: 0 var(--padding) 60px;
+        }
+
+        .contact-layout {
+            width: min(100%, var(--container));
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+            gap: clamp(45px, 7vw, 90px);
+            align-items: start;
+        }
+
+
+        /* =========================
+           CONTACT INFORMATION
+        ========================== */
+
+        .contact-information {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-info-block {
+            padding: 0 0 28px;
+            margin: 0 0 28px;
+            border-bottom: 1px solid rgba(243, 238, 231, .14);
+        }
+
+        .contact-info-block:last-child {
+            padding-bottom: 0;
+            margin-bottom: 0;
+            border-bottom: 0;
+        }
+
+        .contact-info-block h2,
+        .contact-form-heading h2,
+        .contact-help h2 {
+            margin: 0 0 11px;
+            font-family: "Playfair Display", serif;
+            font-weight: 500;
+            color: var(--light);
+            letter-spacing: -.02em;
+        }
+
+        .contact-info-block h2 {
+            font-size: clamp(27px, 3vw, 38px);
+            line-height: 1.15;
+        }
+
+        .contact-info-block > p:not(.eyebrow):not(.contact-response) {
+            max-width: 500px;
+            margin: 0 0 13px;
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .contact-link {
+            display: inline-block;
+            margin-top: 2px;
+            color: var(--light);
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(243, 238, 231, .35);
+            padding-bottom: 3px;
+        }
+
+        .contact-link:hover {
+            border-bottom-color: var(--light);
+        }
+
+        .contact-response {
+            margin: 9px 0 0;
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 7px;
+        }
+
+        .contact-links a {
+            color: var(--light);
+            font-size: 14px;
+            line-height: 1.5;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+
+        .contact-links a:hover {
+            border-bottom-color: rgba(243, 238, 231, .45);
+        }
+
+        .contact-info-block:last-child > p:not(.eyebrow) {
+            margin-bottom: 5px;
+        }
+
+
+        /* =========================
+           CONTACT FORM
+        ========================== */
+
+        .contact-form-wrapper {
+            width: 100%;
+            max-width: 760px;
+        }
+
+        .contact-form-heading {
+            margin-bottom: 26px;
+        }
+
+        .contact-form-heading h2 {
+            font-size: clamp(34px, 4vw, 50px);
+            line-height: 1.08;
+        }
+
+        .contact-form {
+            width: 100%;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 21px 18px;
+        }
+
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+
+        .form-field-full {
+            grid-column: 1 / -1;
+        }
+
+        .form-field label {
+            margin-bottom: 8px;
+            color: var(--light);
+            font-size: 11px;
+            line-height: 1.4;
+            font-weight: 600;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+        }
+
+        .form-field input,
+        .form-field select,
+        .form-field textarea {
+            width: 100%;
+            border: 1px solid rgba(243, 238, 231, .22);
+            border-radius: 0;
+            outline: none;
+            background: rgba(243, 238, 231, .045);
+            color: var(--light);
+            font-family: "DM Sans", sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            transition: border-color .2s ease, background .2s ease;
+            box-sizing: border-box;
+        }
+
+        .form-field input,
+        .form-field select {
+            min-height: 50px;
+            padding: 12px 15px;
+        }
+
+        .form-field textarea {
+            min-height: 150px;
+            padding: 14px 15px;
+            resize: vertical;
+        }
+
+        .form-field input:focus,
+        .form-field select:focus,
+        .form-field textarea:focus {
+            border-color: rgba(243, 238, 231, .65);
+            background: rgba(243, 238, 231, .07);
+        }
+
+        .form-field select {
+            appearance: none;
+            -webkit-appearance: none;
+            cursor: pointer;
+        }
+
+        .form-field select option {
+            background: #3A2721;
+            color: #F7F2EA;
+        }
+
+        .contact-form .button {
+            margin-top: 22px;
+            min-height: 50px;
+            padding: 12px 26px;
+            border: 1px solid var(--light);
+            border-radius: 0;
+            background: var(--light);
+            color: var(--dark);
+            font-family: "DM Sans", sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: opacity .2s ease, transform .2s ease;
+        }
+
+        .contact-form .button:hover {
+            opacity: .88;
+        }
+
+        .contact-form-note {
+            max-width: 600px;
+            margin: 12px 0 0;
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.55;
+        }
+
+
+        /* =========================
+           ADDITIONAL HELP
+        ========================== */
+
+        .contact-help {
+            width: 100%;
+            padding: 48px var(--padding) 60px;
+            border-top: 1px solid rgba(243, 238, 231, .14);
+        }
+
+        .contact-help-inner {
+            width: min(100%, var(--container));
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+            gap: clamp(40px, 7vw, 90px);
+            align-items: start;
+        }
+
+        .contact-help h2 {
+            max-width: 500px;
+            margin-bottom: 0;
+            font-size: clamp(32px, 4vw, 48px);
+            line-height: 1.1;
+        }
+
+        .contact-help-links {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-help-links a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 16px 0;
+            border-top: 1px solid rgba(243, 238, 231, .14);
+            color: var(--light);
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .contact-help-links a:last-child {
+            border-bottom: 1px solid rgba(243, 238, 231, .14);
+        }
+
+        .contact-help-links a span:last-child {
+            font-size: 17px;
+            transition: transform .2s ease;
+        }
+
+        .contact-help-links a:hover span:last-child {
+            transform: translateX(5px);
+        }
+
+
+        /* =========================
+           TABLET
+        ========================== */
+
+        @media (max-width: 1000px) {
+
+            .contact-layout {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 55px;
+            }
+
+            .contact-form-wrapper {
+                max-width: 100%;
+            }
+
+            .contact-help-inner {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 38px;
+            }
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 768px) {
+
+            .contact-intro {
+                padding: 55px 20px 42px;
+            }
+
+            .contact-intro-inner {
+                width: 100%;
+            }
+
+            .contact-intro .eyebrow,
+            .contact-info-block .eyebrow,
+            .contact-form-heading .eyebrow,
+            .contact-help .eyebrow {
+                margin-bottom: 11px;
+                font-size: 10px;
+            }
+
+            .contact-intro h1 {
+                margin-bottom: 15px;
+                font-size: clamp(44px, 13vw, 58px);
+                line-height: 1;
+            }
+
+            .contact-intro-inner > p:last-child {
+                font-size: 14px;
+                line-height: 1.65;
+            }
+
+            .contact-section {
+                padding: 0 20px 55px;
+            }
+
+            .contact-layout {
+                gap: 48px;
+            }
+
+            .contact-info-block {
+                padding-bottom: 25px;
+                margin-bottom: 25px;
+            }
+
+            .contact-info-block h2 {
+                margin-bottom: 10px;
+                font-size: 28px;
+            }
+
+            .contact-info-block > p:not(.eyebrow):not(.contact-response) {
+                font-size: 14px;
+                line-height: 1.7;
+            }
+
+            .contact-form-heading {
+                margin-bottom: 24px;
+            }
+
+            .contact-form-heading h2 {
+                font-size: 36px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 19px;
+            }
+
+            .form-field-full {
+                grid-column: auto;
+            }
+
+            .form-field input,
+            .form-field select {
+                min-height: 50px;
+            }
+
+            .form-field textarea {
+                min-height: 145px;
+            }
+
+            .contact-form .button {
+                width: 100%;
+                margin-top: 22px;
+            }
+
+            .contact-help {
+                padding: 48px 20px 58px;
+            }
+
+            .contact-help-inner {
+                width: 100%;
+                gap: 32px;
+            }
+
+            .contact-help h2 {
+                font-size: 33px;
+            }
+
+            .contact-help-links a {
+                padding: 16px 0;
+                font-size: 13px;
+            }
+        }
+
+
+        /* =========================
+           SMALL MOBILE
+        ========================== */
+
+        @media (max-width: 480px) {
+
+            .contact-intro {
+                padding-top: 48px;
+                padding-bottom: 38px;
+            }
+
+            .contact-intro h1 {
+                font-size: 44px;
+            }
+
+            .contact-layout {
+                gap: 42px;
+            }
+
+            .contact-form-heading h2 {
+                font-size: 33px;
+            }
+
+            .contact-help h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         SITE HEADER
+    ========================== -->
+    <header class="site-header">
+
+        <div class="header-inner">
+
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Open menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+            </button>
+
+            <a href="../index.html" class="site-logo">
+                DREWANE
+            </a>
+
+
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav" aria-label="Main navigation">
+
+                <a href="shop.html">
+                    Shop
+                </a>
+
+                <a href="collection.html">
+                    Collections
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="journal.html">
+                    Journal
+                </a>
+
+            </nav>
+
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+
+                <a href="wishlist.html" aria-label="Wishlist">
+                    ♡
+                </a>
+
+                <a href="cart.html" aria-label="Shopping bag">
+                    Bag
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             MOBILE MENU
+        ========================== -->
+        <div class="mobile-menu" aria-hidden="true">
+
+            <nav class="mobile-nav" aria-label="Mobile navigation">
+
+                <a href="shop.html">
+                    Shop
+                </a>
+
+                <a href="collection.html">
+                    Collections
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="journal.html">
+                    Journal
+                </a>
+
+                <div class="mobile-nav-divider"></div>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a href="account.html">
+                    Account
+                </a>
+
+                <a href="wishlist.html">
+                    Wishlist
+                </a>
+
+                <a href="cart.html">
+                    Shopping Bag
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+    <main class="customer-page">
+
+        <!-- =========================
+             CONTACT INTRO
+        ========================== -->
+        <section class="contact-intro">
+
+            <div class="contact-intro-inner">
+
+                <p class="eyebrow">
+                    CONTACT DREWANE
+                </p>
+
+                <h1>
+                    How can we help?
+                </h1>
+
+                <p>
+                    Our client services team is here to assist with
+                    orders, products, and any questions you may have.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CONTACT CONTENT
+        ========================== -->
+        <section class="contact-section">
+
+            <div class="contact-layout">
+
+
+                <!-- =========================
+                     CONTACT INFORMATION
+                ========================== -->
+                <div class="contact-information">
+
+                    <!-- Client Services -->
+                    <div class="contact-info-block">
+
+                        <p class="eyebrow">
+                            CLIENT SERVICES
+                        </p>
+
+                        <h2>
+                            We're here to help.
+                        </h2>
+
+                        <p>
+                            For questions about DREWANE products,
+                            orders, or your shopping experience,
+                            our team is happy to assist.
+                        </p>
+
+                        <a
+                            href="mailto:hello@drewane.com"
+                            class="contact-link"
+                        >
+                            hello@drewane.com
+                        </a>
+
+                        <p class="contact-response">
+                            We aim to respond within 1–2 business days.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Order Support -->
+                    <div class="contact-info-block">
+
+                        <p class="eyebrow">
+                            ORDER SUPPORT
+                        </p>
+
+                        <h2>
+                            Need help with an order?
+                        </h2>
+
+                        <div class="contact-links">
+
+                            <a href="shipping.html">
+                                Shipping & Delivery
+                            </a>
+
+                            <a href="returns.html">
+                                Returns
+                            </a>
+
+                            <a href="cart.html">
+                                Shopping Bag
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Hours -->
+                    <div class="contact-info-block">
+
+                        <p class="eyebrow">
+                            CLIENT SERVICES HOURS
+                        </p>
+
+                        <p>
+                            Monday – Friday
+                        </p>
+
+                        <p>
+                            9:00 AM – 5:00 PM
+                        </p>
+
+                        <p>
+                            United States
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     CONTACT FORM
+                ========================== -->
+                <div class="contact-form-wrapper">
+
+                    <div class="contact-form-heading">
+
+                        <p class="eyebrow">
+                            SEND A MESSAGE
+                        </p>
+
+                        <h2>
+                            Get in touch.
+                        </h2>
+
+                    </div>
+
+
+                    <form
+                        class="contact-form"
+                        id="contact-form"
+                    >
+
+                        <div class="form-grid">
+
+                            <!-- First Name -->
+                            <div class="form-field">
+
+                                <label for="contact-first-name">
+                                    First name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="contact-first-name"
+                                    name="first-name"
+                                    autocomplete="given-name"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <!-- Last Name -->
+                            <div class="form-field">
+
+                                <label for="contact-last-name">
+                                    Last name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="contact-last-name"
+                                    name="last-name"
+                                    autocomplete="family-name"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <!-- Email -->
+                            <div class="form-field form-field-full">
+
+                                <label for="contact-email">
+                                    Email address
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="contact-email"
+                                    name="email"
+                                    autocomplete="email"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <!-- Subject -->
+                            <div class="form-field form-field-full">
+
+                                <label for="contact-subject">
+                                    Subject
+                                </label>
+
+                                <select
+                                    id="contact-subject"
+                                    name="subject"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Select a subject
+                                    </option>
+
+                                    <option value="order">
+                                        Order Support
+                                    </option>
+
+                                    <option value="shipping">
+                                        Shipping & Delivery
+                                    </option>
+
+                                    <option value="returns">
+                                        Returns
+                                    </option>
+
+                                    <option value="product">
+                                        Product Question
+                                    </option>
+
+                                    <option value="other">
+                                        Other
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- Message -->
+                            <div class="form-field form-field-full">
+
+                                <label for="contact-message">
+                                    Message
+                                </label>
+
+                                <textarea
+                                    id="contact-message"
+                                    name="message"
+                                    rows="7"
+                                    required
+                                ></textarea>
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="button"
+                        >
+                            Send Message
+                        </button>
+
+
+                        <p class="contact-form-note">
+                            By sending this message, you agree to be
+                            contacted by DREWANE regarding your request.
+                        </p>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ADDITIONAL HELP
+        ========================== -->
+        <section class="contact-help">
+
+            <div class="contact-help-inner">
+
+                <div>
+
+                    <p class="eyebrow">
+                        NEED SOMETHING ELSE?
+                    </p>
+
+                    <h2>
+                        Find the information you need.
+                    </h2>
+
+                </div>
+
+
+                <div class="contact-help-links">
+
+                    <a href="shipping.html">
+                        <span>
+                            Shipping & Delivery
+                        </span>
+
+                        <span aria-hidden="true">
+                            →
+                        </span>
+                    </a>
+
+
+                    <a href="returns.html">
+                        <span>
+                            Returns
+                        </span>
+
+                        <span aria-hidden="true">
+                            →
+                        </span>
+                    </a>
+
+
+                    <a href="account.html">
+                        <span>
+                            My Account
+                        </span>
+
+                        <span aria-hidden="true">
+                            →
+                        </span>
+                    </a>
+
+
+                    <a href="shop.html">
+                        <span>
+                            Explore The Shop
+                        </span>
+
+                        <span aria-hidden="true">
+                            →
+                        </span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         SITE FOOTER
+    ========================== -->
+    <footer class="site-footer">
+
+        <div class="footer-main">
+
+            <div class="footer-column">
+
+                <h3>
+                    Client Services
+                </h3>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a href="shipping.html">
+                    Shipping
+                </a>
+
+                <a href="returns.html">
+                    Returns
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    About
+                </h3>
+
+                <a href="about.html">
+                    Our Story
+                </a>
+
+                <a href="journal.html">
+                    Journal
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Legal
+                </h3>
+
+                <a href="privacy.html">
+                    Privacy
+                </a>
+
+                <a href="terms.html">
+                    Terms
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Social
+                </h3>
+
+                <a
+                    href="#"
+                    aria-label="Instagram"
+                >
+                    Instagram
+                </a>
+
+                <a
+                    href="#"
+                    aria-label="TikTok"
+                >
+                    TikTok
+                </a>
+
+                <a
+                    href="#"
+                    aria-label="Pinterest"
+                >
+                    Pinterest
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                ©️ 2026 DREWANE
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="../js/script.js"></script>
+
+</body>
+</html>

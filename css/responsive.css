@@ -1,0 +1,542 @@
+/* =========================================================
+   DREWANE — RESPONSIVE STYLESHEET
+   ========================================================= */
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    /* =====================================================
+       HEADER
+       ===================================================== */
+
+    .desktop-nav {
+        display: flex;
+        gap: 18px;
+    }
+
+    .header-actions {
+        display: flex;
+        gap: 12px;
+    }
+
+
+    /* =====================================================
+       NEW ARRIVALS
+       ===================================================== */
+
+    .new-arrivals .product-card {
+        flex-basis: calc(
+            (min(100vw - (var(--padding) * 2), var(--container)) - 60px) / 3
+        );
+
+        width: calc(
+            (min(100vw - (var(--padding) * 2), var(--container)) - 60px) / 3
+        );
+    }
+
+
+    /* =====================================================
+       BEST SELLERS
+       ===================================================== */
+
+    .product-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+
+    /* =====================================================
+       FEATURED / CRAFTSMANSHIP
+       ===================================================== */
+
+    .featured-collection,
+    .craftsmanship {
+        gap: 45px;
+    }
+
+
+    /* =====================================================
+       SECTION SPACING
+       ===================================================== */
+
+    .new-arrivals.section {
+        padding-bottom: 40px;
+    }
+
+    .brand-statement.section {
+        padding-top: 40px;
+    }
+
+    .featured-collection.section {
+        padding-bottom: 40px;
+    }
+
+    .best-sellers.section {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .craftsmanship.section {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .newsletter.section {
+        padding-top: 40px;
+    }
+
+
+    /* =====================================================
+       FOOTER
+       2 × 2 ARRANGEMENT
+       ===================================================== */
+
+    .site-footer {
+        padding: 50px var(--padding) 22px;
+    }
+
+    .footer-main {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 30px;
+        row-gap: 0;
+    }
+
+    .footer-column h3 {
+        margin-bottom: 14px;
+    }
+
+    .footer-column a {
+        margin-bottom: 7px;
+    }
+
+    .footer-bottom {
+        margin-top: 35px;
+        padding-top: 16px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    :root {
+        --padding: 20px;
+        --section-space: 85px;
+    }
+
+
+    /* =====================================================
+       HEADER
+       ===================================================== */
+
+    .header-inner {
+        min-height: 68px;
+    }
+
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 6px;
+        width: 28px;
+        height: 28px;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+        order: 1;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 22px;
+        height: 1px;
+        background: #F7F2EA;
+    }
+
+    .site-logo {
+        order: 2;
+        margin-right: auto;
+        margin-left: 12px;
+    }
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .header-actions {
+        display: flex;
+        order: 3;
+        gap: 12px;
+    }
+
+    .header-actions a:first-child {
+        display: none;
+    }
+
+    .header-actions a:nth-child(2),
+    .header-actions a:nth-child(3) {
+        display: block;
+    }
+
+
+    /* =====================================================
+       MOBILE MENU
+       ===================================================== */
+
+    .mobile-menu {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        padding: 20px;
+        background: #0D0D0B;
+        z-index: 1000;
+    }
+
+    .mobile-menu.is-open {
+        display: block;
+    }
+
+    .mobile-menu .mobile-nav {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .mobile-menu .mobile-nav a {
+        display: block;
+        width: 100%;
+        color: #F7F2EA;
+    }
+
+    .mobile-menu .mobile-nav-divider {
+        width: 100%;
+        height: 1px;
+        margin: 12px 0;
+        background: rgba(243, 238, 231, 0.15);
+    }
+
+
+    /* =====================================================
+       HERO
+       ===================================================== */
+
+    .hero {
+        height: 500px;
+    }
+
+    .hero-content {
+        width: calc(100% - 40px);
+    }
+
+    .hero-content h1,
+    .hero-content h2 {
+        max-width: 90%;
+        font-size: clamp(44px, 12vw, 68px);
+    }
+
+    .hero-description {
+        max-width: 80%;
+    }
+
+    .hero-indicators {
+        left: 20px;
+        bottom: 25px;
+    }
+
+
+    /* =====================================================
+       NEW ARRIVALS
+       ===================================================== */
+
+    .new-arrivals {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 0;
+        padding-bottom: 50px;
+    }
+
+    .new-arrivals .section-heading {
+        padding-right: 20px;
+    }
+
+    .new-arrivals .product-slider {
+        width: 100%;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .new-arrivals .product-slider::-webkit-scrollbar {
+        display: none;
+    }
+
+    .new-arrivals .product-track {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        gap: 15px;
+
+        width: max-content;
+    }
+
+    .new-arrivals .product-card {
+        flex: 0 0 calc((100vw - 55px) / 2);
+        width: calc((100vw - 55px) / 2);
+    }
+
+    .new-arrivals .product-image {
+        aspect-ratio: 0.78 / 1;
+    }
+
+
+    /* =====================================================
+       GENERAL SECTION HEADINGS
+       ===================================================== */
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        margin-bottom: 28px;
+    }
+
+
+    /* =====================================================
+       BRAND STATEMENT
+       ===================================================== */
+
+    .brand-statement.section {
+        padding-top: 50px;
+    }
+
+    .brand-statement-inner {
+        width: calc(100% - 40px);
+    }
+
+    .brand-statement-inner h2 {
+        font-size: clamp(38px, 10vw, 58px);
+    }
+
+
+    /* =====================================================
+       FEATURED COLLECTION
+       ===================================================== */
+
+    .featured-collection {
+        width: calc(100% - 40px);
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 35px;
+    }
+
+    .featured-collection.section {
+        padding-bottom: 50px;
+    }
+
+    .featured-content {
+        max-width: none;
+    }
+
+
+    /* =====================================================
+       BEST SELLERS
+       ===================================================== */
+
+    .best-sellers {
+        width: calc(100% - 40px);
+    }
+
+    .best-sellers.section {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px 12px;
+    }
+
+
+    /* =====================================================
+       CRAFTSMANSHIP
+       ===================================================== */
+
+    .craftsmanship {
+        width: calc(100% - 40px);
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 35px;
+    }
+
+    .craftsmanship.section {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .craftsmanship-content {
+        max-width: none;
+    }
+
+
+    /* =====================================================
+       NEWSLETTER
+       ===================================================== */
+
+    .newsletter.section {
+        padding-top: 50px;
+    }
+
+    .newsletter-inner {
+        width: calc(100% - 40px);
+    }
+
+    .newsletter-form {
+        width: 100%;
+    }
+
+
+    /* =====================================================
+       FOOTER
+       2 × 2 ARRANGEMENT
+       ===================================================== */
+
+    .site-footer {
+        padding: 40px 20px 20px;
+    }
+
+    .footer-main {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        column-gap: 24px;
+        row-gap: 0;
+    }
+
+    .footer-column {
+        width: 100%;
+
+        padding: 10px 0;
+
+        border-top: 1px solid rgba(243, 238, 231, 0.15);
+    }
+
+    .footer-column h3 {
+        margin-bottom: 12px;
+    }
+
+    .footer-column a {
+        margin-bottom: 6px;
+    }
+
+
+    /* =====================================================
+       FOOTER BOTTOM
+       ===================================================== */
+
+    .footer-bottom {
+        width: 100%;
+
+        margin-top: 18px;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 5px;
+    }
+
+
+    /* =====================================================
+       PRODUCT DETAIL
+       ===================================================== */
+
+    .product-detail {
+        width: calc(100% - 40px);
+
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .product-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .product-thumbnails {
+        order: 2;
+        flex-direction: row;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    /* HERO */
+
+    .hero {
+        height: 480px;
+    }
+
+    .hero-content h1,
+    .hero-content h2 {
+        font-size: 46px;
+    }
+
+
+    /* NEW ARRIVALS */
+
+    .new-arrivals .product-card {
+        flex-basis: calc((100vw - 55px) / 2);
+        width: calc((100vw - 55px) / 2);
+    }
+
+
+    /* BEST SELLERS */
+
+    .product-grid {
+        gap: 28px 10px;
+    }
+
+    .product-info {
+        padding-right: 28px;
+    }
+
+
+    /* FEATURED / CRAFTSMANSHIP */
+
+    .featured-collection,
+    .craftsmanship {
+        gap: 30px;
+    }
+}

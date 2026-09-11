@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wishlist — DREWANE</title>
+
+    <meta
+        name="description"
+        content="Your saved DREWANE jewelry and fragrance pieces."
+    >
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <style>
+        /* =========================
+           WISHLIST PAGE
+        ========================== */
+
+        .customer-intro {
+            padding: 38px var(--padding) 30px;
+        }
+
+        .customer-intro-inner {
+            width: min(100%, var(--container));
+            margin: 0 auto;
+        }
+
+        .customer-intro .eyebrow {
+            margin-bottom: 7px;
+        }
+
+        .customer-intro h1 {
+            margin: 0 0 9px;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(38px, 4.5vw, 52px);
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: -0.025em;
+        }
+
+        .customer-intro-inner > p:last-child {
+            max-width: 520px;
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           WISHLIST CONTENT
+        ========================== */
+
+        .wishlist-section {
+            width: min(100%, var(--container));
+            margin: 0 auto;
+            padding: 0 var(--padding) 50px;
+        }
+
+        .wishlist-products {
+            width: 100%;
+        }
+
+        .wishlist-empty {
+            width: 100%;
+            padding: 45px 25px;
+            text-align: center;
+            border: 1px solid rgba(13, 13, 11, 0.12);
+        }
+
+        .wishlist-empty .eyebrow {
+            margin-bottom: 7px;
+        }
+
+        .wishlist-empty h2 {
+            margin: 0 0 8px;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(30px, 3.5vw, 40px);
+            font-weight: 400;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+        }
+
+        .wishlist-empty p:not(.eyebrow) {
+            max-width: 440px;
+            margin: 0 auto 18px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           TABLET
+        ========================== */
+
+        @media (max-width: 1000px) {
+
+            .customer-intro {
+                padding: 34px var(--padding) 27px;
+            }
+
+            .wishlist-section {
+                padding-bottom: 45px;
+            }
+
+            .wishlist-empty {
+                padding: 40px 22px;
+            }
+
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 768px) {
+
+            .customer-intro {
+                padding: 28px 20px 22px;
+            }
+
+            .customer-intro h1 {
+                font-size: 34px;
+            }
+
+            .customer-intro-inner > p:last-child {
+                font-size: 14px;
+                line-height: 1.55;
+            }
+
+            .wishlist-section {
+                width: 100%;
+                padding: 0 20px 38px;
+            }
+
+            .wishlist-empty {
+                padding: 34px 18px;
+            }
+
+            .wishlist-empty h2 {
+                font-size: 30px;
+            }
+
+            .wishlist-empty p:not(.eyebrow) {
+                margin-bottom: 17px;
+            }
+
+        }
+
+        /* =========================
+           SMALL MOBILE
+        ========================== */
+
+        @media (max-width: 480px) {
+
+            .customer-intro {
+                padding: 25px 20px 20px;
+            }
+
+            .customer-intro h1 {
+                font-size: 31px;
+            }
+
+            .wishlist-section {
+                padding-bottom: 34px;
+            }
+
+            .wishlist-empty {
+                padding: 30px 15px;
+            }
+
+            .wishlist-empty h2 {
+                font-size: 27px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         SITE HEADER
+    ========================== -->
+    <header class="site-header">
+
+        <div class="header-inner">
+
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Open menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+            </button>
+
+            <a href="../index.html" class="site-logo">
+                DREWANE
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav" aria-label="Main navigation">
+
+                <a href="shop.html">
+                    Shop
+                </a>
+
+                <a href="collection.html">
+                    Collections
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="journal.html">
+                    Journal
+                </a>
+
+            </nav>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+
+                <a href="account.html">
+                    Account
+                </a>
+
+                <a
+                    href="wishlist.html"
+                    class="active"
+                >
+                    Wishlist
+                </a>
+
+                <a href="cart.html">
+                    Bag <span class="cart-count">(0)</span>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             MOBILE MENU
+        ========================== -->
+        <div class="mobile-menu" aria-hidden="true">
+
+            <nav class="mobile-nav" aria-label="Mobile navigation">
+
+                <a href="shop.html">
+                    Shop
+                </a>
+
+                <a href="collection.html">
+                    Collections
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="journal.html">
+                    Journal
+                </a>
+
+                <div class="mobile-nav-divider"></div>
+
+                <a href="account.html">
+                    Account
+                </a>
+
+                <a
+                    href="wishlist.html"
+                    class="active"
+                >
+                    Wishlist
+                </a>
+
+                <a href="cart.html">
+                    Shopping Bag
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+    <main class="customer-page">
+
+        <!-- Wishlist Header -->
+        <section class="customer-intro">
+
+            <div class="customer-intro-inner">
+
+                <p class="eyebrow">
+                    YOUR WISHLIST
+                </p>
+
+                <h1>
+                    Pieces worth keeping.
+                </h1>
+
+                <p>
+                    Save the pieces you love and return to them
+                    whenever you're ready.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             WISHLIST CONTENT
+        ========================== -->
+        <section class="wishlist-section">
+
+            <!--
+                JavaScript will use this container later
+                to display saved wishlist products.
+            -->
+            <div
+                class="wishlist-products"
+                id="wishlist-products"
+            >
+
+                <!-- Wishlist products will be rendered here -->
+
+            </div>
+
+
+            <!-- =========================
+                 EMPTY WISHLIST
+            ========================== -->
+            <div
+                class="wishlist-empty"
+                id="wishlist-empty"
+            >
+
+                <p class="eyebrow">
+                    YOUR WISHLIST
+                </p>
+
+                <h2>
+                    Your wishlist is waiting.
+                </h2>
+
+                <p>
+                    Save pieces you love and they'll appear here.
+                </p>
+
+                <a href="shop.html" class="button">
+                    Continue Shopping
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         SITE FOOTER
+    ========================== -->
+    <footer class="site-footer">
+
+        <div class="footer-main">
+
+            <div class="footer-column">
+
+                <h3>
+                    Client Services
+                </h3>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a href="shipping.html">
+                    Shipping
+                </a>
+
+                <a href="returns.html">
+                    Returns
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    About
+                </h3>
+
+                <a href="about.html">
+                    Our Story
+                </a>
+
+                <a href="journal.html">
+                    Journal
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Legal
+                </h3>
+
+                <a href="privacy.html">
+                    Privacy
+                </a>
+
+                <a href="terms.html">
+                    Terms
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Social
+                </h3>
+
+                <a
+                    href="#"
+                    aria-label="Instagram"
+                >
+                    Instagram
+                </a>
+
+                <a
+                    href="#"
+                    aria-label="TikTok"
+                >
+                    TikTok
+                </a>
+
+                <a
+                    href="#"
+                    aria-label="Pinterest"
+                >
+                    Pinterest
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                ©️ 2026 DREWANE
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="../js/script.js"></script>
+
+</body>
+</html>
